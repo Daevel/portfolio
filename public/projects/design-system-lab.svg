@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Design System Lab preview</title>
+  <desc id="desc">Design token cards and component previews.</desc>
+  <rect width="1280" height="720" fill="#fafafa" />
+  <circle cx="1010" cy="170" r="110" fill="#e4e4e7" />
+  <rect x="130" y="120" width="360" height="210" rx="32" fill="#18181b" />
+  <rect x="180" y="170" width="160" height="26" rx="13" fill="#fafafa" />
+  <rect x="180" y="230" width="240" height="18" rx="9" fill="#a1a1aa" />
+  <rect x="560" y="120" width="300" height="210" rx="32" fill="#ffffff" stroke="#d4d4d8" />
+  <rect x="610" y="170" width="120" height="26" rx="13" fill="#18181b" />
+  <rect x="610" y="230" width="190" height="18" rx="9" fill="#d4d4d8" />
+  <rect x="250" y="390" width="780" height="150" rx="34" fill="#f4f4f5" stroke="#d4d4d8" />
+</svg>

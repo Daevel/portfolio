@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Frontend Platform Starter preview</title>
+  <desc id="desc">Abstract interface blocks for a frontend starter project.</desc>
+  <rect width="1280" height="720" fill="#f4f4f5" />
+  <rect x="120" y="110" width="1040" height="500" rx="36" fill="#ffffff" stroke="#d4d4d8" />
+  <rect x="170" y="160" width="280" height="54" rx="18" fill="#18181b" />
+  <rect x="170" y="250" width="520" height="28" rx="14" fill="#d4d4d8" />
+  <rect x="170" y="300" width="420" height="28" rx="14" fill="#e4e4e7" />
+  <rect x="760" y="180" width="330" height="260" rx="28" fill="#27272a" />
+  <rect x="805" y="230" width="180" height="26" rx="13" fill="#fafafa" />
+  <rect x="805" y="285" width="235" height="18" rx="9" fill="#a1a1aa" />
+  <rect x="805" y="325" width="205" height="18" rx="9" fill="#a1a1aa" />
+</svg>
