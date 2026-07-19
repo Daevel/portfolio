@@ -12,9 +12,19 @@ export const siteConfig = {
   },
   navigation: [
     { label: "Home", href: "/" },
-    { label: "About me", href: "/about" },
+    { label: "About", href: "/about" },
     { label: "Projects", href: "/projects" },
     { label: "Contacts", href: "/contacts" },
   ],
-  technologies: ["React", "Next.js", "TypeScript", "Angular", "Tailwind CSS", "Accessibility"],
+  technologies: [
+    { name: "Angular", path: "/tools/Angular.svg" },
+    { name: "React", path: "/tools/React.svg" },
+    { name: "Next.js", path: "/tools/Next.js.svg" },
+    { name: "TypeScript", path: "/tools/Typescript.svg" },
+    { name: "Tailwind CSS", path: "/tools/Tailwind.svg" },
+    { name: "RxJS", path: "/tools/Rxjs.svg" },
+    { name: "GSAP", path: "/tools/Gsap.svg" },
+    { name: "Framer", path: "/tools/Framer.svg" },
+    { name: "Figma", path: "/tools/Figma.svg" },
+  ],
 } as const;

@@ -8,12 +8,12 @@ import { siteConfig } from "@/config/site";
 export function Header() {
   return (
     <header className="sticky top-0 z-40 border-border/70 border-b bg-background/85 backdrop-blur">
-      <Container className="relative flex min-h-16 items-center justify-between gap-4 py-3">
+      <Container className="relative flex min-h-16 max-w-none items-start justify-between gap-4 py-3">
         <Link
-          className="rounded-full font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+          className="text-5xl  font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
           href="/"
         >
-          {siteConfig.name}
+          {siteConfig.name.toUpperCase()}
         </Link>
         <Navigation />
         <MobileNavigation />

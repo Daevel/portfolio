@@ -7,6 +7,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { featuredProjects } from "@/data/projects";
 
+const coreTechnologies = "Core technologies";
+const technologyRows = [siteConfig.technologies.slice(0, 4), siteConfig.technologies.slice(4)];
+
 export default function HomePage() {
   return (
     <>
@@ -32,8 +35,8 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
-          <Reveal className="rounded-[2rem] border border-border bg-muted p-6" delay={0.1}>
-            <div className="rounded-[1.5rem] bg-background p-6 shadow-sm">
+          <Reveal className=" border border-border bg-muted p-6" delay={0.1}>
+            <div className=" bg-background p-6 shadow-sm">
               <p className="text-sm text-muted-foreground">Current focus</p>
               <p className="mt-3 text-2xl font-semibold">Modern frontend architecture</p>
               <p className="mt-4 text-muted-foreground leading-7">
@@ -46,17 +49,33 @@ export default function HomePage() {
       </section>
 
       <section className="py-16 sm:py-20">
-        <Container>
+        <Container className="max-w-none">
           <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Core technologies</h2>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {siteConfig.technologies.map((technology) => (
-                <span
-                  className="rounded-full border border-border px-4 py-2 text-sm"
-                  key={technology}
+            <h2 className="font-semibold tracking-tight sm:text-4xl">
+              {coreTechnologies.toUpperCase()}
+            </h2>
+            <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
+              {technologyRows.map((row, rowIndex) => (
+                <div
+                  className={rowIndex === 0 ? "grid grid-cols-4" : "grid grid-cols-5"}
+                  key={rowIndex}
                 >
-                  {technology}
-                </span>
+                  {row.map((technology) => (
+                    <div
+                      className="group grid aspect-square w-full place-items-center border border-border bg-background p-3 transition-colors hover:bg-primary"
+                      key={technology.name}
+                      title={technology.name}
+                    >
+                      <Image
+                        alt={`${technology.name} logo`}
+                        className="size-10 object-contain transition group-hover:brightness-0 group-hover:invert sm:size-20 lg:size-32"
+                        height={128}
+                        src={technology.path}
+                        width={128}
+                      />
+                    </div>
+                  ))}
+                </div>
               ))}
             </div>
           </Reveal>
@@ -81,13 +100,13 @@ export default function HomePage() {
           <div className="mt-8 grid gap-5 md:grid-cols-2">
             {featuredProjects.map((project, index) => (
               <Reveal
-                className="rounded-3xl border border-border bg-background p-4"
+                className=" border border-border bg-background p-4"
                 delay={index * 0.08}
                 key={project.slug}
               >
                 <Image
                   alt={`Preview of ${project.title}`}
-                  className="aspect-video rounded-2xl border border-border object-cover"
+                  className="aspect-video  border border-border object-cover"
                   height={360}
                   src={project.image}
                   width={640}
@@ -108,7 +127,7 @@ export default function HomePage() {
 
       <section className="py-16 sm:py-20">
         <Container>
-          <Reveal className="rounded-[2rem] bg-primary p-8 text-primary-foreground sm:p-10">
+          <Reveal className=" bg-primary p-8 text-primary-foreground sm:p-10">
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight">
               Hai un prodotto frontend da progettare, rifinire o scalare?
             </h2>
