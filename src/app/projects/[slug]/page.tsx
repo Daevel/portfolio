@@ -69,26 +69,26 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </header>
         <Image
           alt={`Preview of ${project.title}`}
-          className="mt-10 aspect-video rounded-[2rem] border border-border object-cover"
+          className="mt-10 aspect-video border border-border object-cover"
           height={720}
           priority
           src={project.image}
           width={1280}
         />
         <section className="mt-12 grid gap-6 lg:grid-cols-[0.7fr_0.3fr]">
-          <div className="rounded-3xl border border-border p-6">
+          <div className=" border border-border p-6">
             <h2 className="text-2xl font-semibold">Case study structure</h2>
             <p className="mt-4 text-muted-foreground leading-8">
               Questa pagina e predisposta per raccontare contesto, problema, processo, decisioni
               tecniche, risultati e metriche del progetto.
             </p>
           </div>
-          <aside className="rounded-3xl border border-border p-6">
+          <aside className=" border border-border p-6">
             <h2 className="text-lg font-semibold">Technologies</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.technologies.map((technology) => (
                 <span
-                  className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground text-xs"
+                  className=" bg-secondary px-3 py-1 text-secondary-foreground text-xs"
                   key={technology}
                 >
                   {technology}

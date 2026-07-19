@@ -43,7 +43,7 @@ export function MobileNavigation() {
       </Button>
       <div
         className={cn(
-          "absolute inset-x-5 top-20 rounded-3xl border border-border bg-background/95 p-3 shadow-xl shadow-foreground/10 backdrop-blur md:hidden",
+          "absolute inset-x-5 top-20  border border-border bg-background/95 p-3 shadow-xl shadow-foreground/10 backdrop-blur md:hidden",
           !isOpen && "hidden",
         )}
         id={menuId}
@@ -56,7 +56,7 @@ export function MobileNavigation() {
               <Link
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "rounded-2xl px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                  " px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
                   isActive && "bg-secondary text-foreground",
                 )}
                 href={item.href}

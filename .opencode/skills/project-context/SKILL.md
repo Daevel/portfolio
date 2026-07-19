@@ -33,7 +33,7 @@ The project should start from a clean, production-ready technical foundation wit
 The site initially contains these primary sections, each mapped to a separate route:
 
 - Home: `/`
-- About me: `/about`
+- About: `/about`
 - Projects: `/projects`
 - Contacts: `/contacts`
 

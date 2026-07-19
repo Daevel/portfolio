@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 
 export const metadata: Metadata = {
-  title: "About me",
+  title: "About",
   description: "Profilo professionale di Luigi Avitabile, Frontend Software Engineer.",
   alternates: {
     canonical: "/about",
@@ -15,7 +15,7 @@ export default function AboutPage() {
     <Container className="py-16 sm:py-24">
       <section className="max-w-3xl">
         <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-          About me
+          About
         </p>
         <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
           Frontend engineering con attenzione a prodotto, accessibilita e qualita.
@@ -40,7 +40,7 @@ export default function AboutPage() {
             "Type safety, linting, performance e attenzione alla manutenzione nel tempo.",
           ],
         ].map(([title, description]) => (
-          <article className="rounded-3xl border border-border p-6" key={title}>
+          <article className="border border-border p-6" key={title}>
             <h2 className="text-xl font-semibold">{title}</h2>
             <p className="mt-3 text-muted-foreground leading-7">{description}</p>
           </article>

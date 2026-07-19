@@ -18,13 +18,13 @@ export function Navigation() {
           <Link
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-              isActive && "bg-secondary text-foreground",
+              "text-2xl  px-4 py-2 font-medium text-muted-foreground transition-colors hover:bg-primary hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+              isActive && "bg-primary text-foreground",
             )}
             href={item.href}
             key={item.href}
           >
-            {item.label}
+            {item.label.toUpperCase()}
           </Link>
         );
       })}

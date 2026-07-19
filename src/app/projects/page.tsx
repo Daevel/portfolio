@@ -14,16 +14,16 @@ export const metadata: Metadata = {
   },
 };
 
+const titleText: string = "Side projects e basi tecniche da trasformare in case study.";
+
 export default function ProjectsPage() {
   return (
     <Container className="py-16 sm:py-24">
-      <section className="max-w-3xl">
+      <section className="max-w-4xl">
         <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
           Projects
         </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Side projects e basi tecniche da trasformare in case study.
-        </h1>
+        <h1 className="mt-4 text-6xl font-semibold tracking-tight">{titleText.toUpperCase()}</h1>
         <p className="mt-6 text-lg text-muted-foreground leading-8">
           Questa sezione raccoglie progetti placeholder gia predisposti per diventare case study
           dettagliati.
@@ -32,12 +32,12 @@ export default function ProjectsPage() {
       <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3" aria-label="Project list">
         {projects.map((project) => (
           <article
-            className="flex flex-col rounded-3xl border border-border bg-background p-4"
+            className="flex flex-col  border border-border bg-background p-4"
             key={project.slug}
           >
             <Image
               alt={`Preview of ${project.title}`}
-              className="aspect-video rounded-2xl border border-border object-cover"
+              className="aspect-video  border border-border object-cover"
               height={300}
               src={project.image}
               width={520}
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
               <div className="mt-4 flex flex-wrap gap-2">
                 {project.technologies.map((technology) => (
                   <span
-                    className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground text-xs"
+                    className=" bg-secondary px-3 py-1 text-secondary-foreground text-xs"
                     key={technology}
                   >
                     {technology}
