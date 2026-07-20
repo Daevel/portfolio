@@ -1,0 +1,75 @@
+{
+  "skipToContent": "Skip to content",
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contacts": "Contacts"
+  },
+  "home": {
+    "coreTechnologies": "Core technologies",
+    "h1Title": "I build solid, accessible, product-oriented web interfaces.",
+    "pPresentation": "I'm Luigi Avitabile, Frontend Software Engineer. I work on React and Angular experiences with a focus on performance, maintainability, and code quality.",
+    "viewProjects": "View projects",
+    "contactMe": "Contact me",
+    "currentFocus": "Current focus",
+    "modernFrontendArchitecture": "Modern frontend architecture",
+    "currentFocusDescription": "Design systems, accessible components, performance, and scalable workflows for web products.",
+    "featuredProjects": "Featured projects",
+    "featuredProjectsDescription": "Some placeholder projects that will be replaced with real case studies.",
+    "allProjects": "All projects",
+    "readCaseStudy": "Read case study",
+    "ctaTitle": "Have a frontend product to design, refine, or scale?",
+    "ctaDescription": "The contacts section is ready to be connected to real channels and a future lead generation strategy.",
+    "letsTalk": "Let's talk"
+  },
+  "about": {
+    "sectionLabel": "About",
+    "h1Title": "Frontend engineering with attention to product, accessibility, and quality.",
+    "introduction": "I'm Luigi Avitabile, Frontend Software Engineer. I build modern interfaces using React, Angular, and TypeScript, with a pragmatic approach to code scalability.",
+    "frontendArchitecture": "Frontend architecture",
+    "frontendArchitectureDescription": "Clear structures, reusable components, and understandable technical boundaries.",
+    "userExperience": "User experience",
+    "userExperienceDescription": "Responsive, accessible interfaces aligned with product goals.",
+    "engineeringQuality": "Engineering quality",
+    "engineeringQualityDescription": "Type safety, linting, performance, and attention to long-term maintainability."
+  },
+  "contacts": {
+    "sectionLabel": "Contacts",
+    "h1Title": "Let's talk about frontend, products, and new opportunities.",
+    "introduction": "Replace these references with the final channels when ready: domain, professional email, and updated profiles.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "projects": {
+    "sectionLabel": "Projects",
+    "h1Title": "Side projects and technical foundations to turn into case studies.",
+    "introduction": "This section collects placeholder projects already set up to become detailed case studies.",
+    "readCaseStudy": "Read case study"
+  },
+  "projectDetail": {
+    "backToProjects": "Back to projects",
+    "caseStudyLabel": "Case study",
+    "caseStudyStructure": "Case study structure",
+    "caseStudyStructureDescription": "This page is set up to tell the story of context, problem, process, technical decisions, results, and project metrics.",
+    "technologies": "Technologies",
+    "repository": "Repository",
+    "livePreview": "Live preview",
+    "projectNotFound": "Project not found"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found",
+    "description": "The requested page does not exist or has not been published yet.",
+    "backHome": "Back home"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js."
+  },
+  "metadata": {
+    "aboutDescription": "Professional profile of Luigi Avitabile, Frontend Software Engineer.",
+    "contactsDescription": "Contact information and professional links for Luigi Avitabile.",
+    "projectsDescription": "Frontend projects and case studies by Luigi Avitabile."
+  }
+}

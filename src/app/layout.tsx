@@ -3,7 +3,9 @@ import { Geist } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
+import { SkipToContent } from "@/components/layout/skip-to-content";
 import { siteConfig } from "@/config/site";
+import { TranslationProvider } from "@/i18n/context";
 
 import "./globals.css";
 
@@ -41,17 +43,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html className={geist.variable} lang="it">
       <body className="flex min-h-screen flex-col antialiased">
-        <a
-          className="sr-only z-50  bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:outline-2 focus:outline-offset-2 focus:outline-focus-ring"
-          href="#main-content"
-        >
-          Skip to content
-        </a>
-        <Header />
-        <main className="flex-1" id="main-content">
-          {children}
-        </main>
-        <Footer />
+        <TranslationProvider>
+          <SkipToContent />
+          <Header />
+          <main className="flex-1" id="main-content">
+            {children}
+          </main>
+          <Footer />
+        </TranslationProvider>
       </body>
     </html>
   );

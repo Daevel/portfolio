@@ -11,10 +11,10 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/luigiavitabile",
   },
   navigation: [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Projects", href: "/projects" },
-    { label: "Contacts", href: "/contacts" },
+    { key: "home" as const, href: "/" },
+    { key: "about" as const, href: "/about" },
+    { key: "projects" as const, href: "/projects" },
+    { key: "contacts" as const, href: "/contacts" },
   ],
   technologies: [
     { name: "Angular", path: "/tools/Angular.svg" },

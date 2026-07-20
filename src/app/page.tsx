@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,42 +8,44 @@ import { Reveal } from "@/components/motion/reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { featuredProjects } from "@/data/projects";
+import { useTranslation } from "@/i18n/context";
 
-const coreTechnologies = "Core technologies";
 const technologyRows = [siteConfig.technologies.slice(0, 4), siteConfig.technologies.slice(4)];
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="border-border border-b py-20 sm:py-28">
-        <Container className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+        <Container className="grid gap-10 max-w-none lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
           <Reveal>
             <p className="mb-4 font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-              {siteConfig.role}
+              {siteConfig.role.toUpperCase()}
             </p>
             <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              Creo interfacce web solide, accessibili e orientate al prodotto.
+              {t.home.h1Title.toUpperCase()}
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-8">
-              Sono {siteConfig.name}, Frontend Software Engineer. Lavoro su esperienze React e
-              Angular con attenzione a performance, manutenibilita e qualita del codice.
+              {t.home.pPresentation.toUpperCase()}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link className={buttonVariants({ size: "lg" })} href="/projects">
-                View projects
+                {t.home.viewProjects.toUpperCase()}
               </Link>
               <Link className={buttonVariants({ variant: "outline", size: "lg" })} href="/contacts">
-                Contact me
+                {t.home.contactMe.toUpperCase()}
               </Link>
             </div>
           </Reveal>
           <Reveal className=" border border-border bg-muted p-6" delay={0.1}>
             <div className=" bg-background p-6 shadow-sm">
-              <p className="text-sm text-muted-foreground">Current focus</p>
-              <p className="mt-3 text-2xl font-semibold">Modern frontend architecture</p>
+              <p className="text-sm text-muted-foreground">{t.home.currentFocus.toUpperCase()}</p>
+              <p className="mt-3 text-2xl font-semibold">
+                {t.home.modernFrontendArchitecture.toUpperCase()}
+              </p>
               <p className="mt-4 text-muted-foreground leading-7">
-                Design system, componenti accessibili, performance e workflow scalabili per prodotti
-                web.
+                {t.home.currentFocusDescription.toUpperCase()}
               </p>
             </div>
           </Reveal>
@@ -52,7 +56,7 @@ export default function HomePage() {
         <Container className="max-w-none">
           <Reveal>
             <h2 className="font-semibold tracking-tight sm:text-4xl">
-              {coreTechnologies.toUpperCase()}
+              {t.home.coreTechnologies.toUpperCase()}
             </h2>
             <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
               {technologyRows.map((row, rowIndex) => (
@@ -87,14 +91,14 @@ export default function HomePage() {
           <Reveal className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                Featured projects
+                {t.home.featuredProjects.toUpperCase()}
               </h2>
               <p className="mt-3 max-w-2xl text-muted-foreground">
-                Alcuni progetti placeholder che verranno sostituiti con case study reali.
+                {t.home.featuredProjectsDescription.toUpperCase()}
               </p>
             </div>
             <Link className={buttonVariants({ variant: "outline" })} href="/projects">
-              All projects
+              {t.home.allProjects.toUpperCase()}
             </Link>
           </Reveal>
           <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -117,7 +121,7 @@ export default function HomePage() {
                   className="mt-4 inline-flex font-medium text-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
                   href={`/projects/${project.slug}`}
                 >
-                  Read case study
+                  {t.home.readCaseStudy.toUpperCase()}
                 </Link>
               </Reveal>
             ))}
@@ -129,17 +133,16 @@ export default function HomePage() {
         <Container>
           <Reveal className=" bg-primary p-8 text-primary-foreground sm:p-10">
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight">
-              Hai un prodotto frontend da progettare, rifinire o scalare?
+              {t.home.ctaTitle.toUpperCase()}
             </h2>
             <p className="mt-4 max-w-2xl text-primary-foreground/80">
-              La sezione contatti e pronta per essere collegata ai canali reali e a una futura
-              strategia di lead generation.
+              {t.home.ctaDescription.toUpperCase()}
             </p>
             <Link
               className={buttonVariants({ variant: "secondary", size: "lg", className: "mt-6" })}
               href="/contacts"
             >
-              Let us talk
+              {t.home.letsTalk.toUpperCase()}
             </Link>
           </Reveal>
         </Container>

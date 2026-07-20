@@ -4,10 +4,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { siteConfig } from "@/config/site";
+import { useTranslation } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 export function Navigation() {
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   return (
     <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
@@ -24,7 +26,7 @@ export function Navigation() {
             href={item.href}
             key={item.href}
           >
-            {item.label.toUpperCase()}
+            {t.navigation[item.key].toUpperCase()}
           </Link>
         );
       })}

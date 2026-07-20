@@ -1,32 +1,27 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
 import { projects } from "@/data/projects";
-
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "Progetti e case study frontend di Luigi Avitabile.",
-  alternates: {
-    canonical: "/projects",
-  },
-};
-
-const titleText: string = "Side projects e basi tecniche da trasformare in case study.";
+import { useTranslation } from "@/i18n/context";
 
 export default function ProjectsPage() {
+  const { t } = useTranslation();
+
   return (
     <Container className="py-16 sm:py-24">
       <section className="max-w-4xl">
         <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-          Projects
+          {t.projects.sectionLabel.toUpperCase()}
         </p>
-        <h1 className="mt-4 text-6xl font-semibold tracking-tight">{titleText.toUpperCase()}</h1>
+        <h1 className="mt-4 text-6xl font-semibold tracking-tight">
+          {t.projects.h1Title.toUpperCase()}
+        </h1>
         <p className="mt-6 text-lg text-muted-foreground leading-8">
-          Questa sezione raccoglie progetti placeholder gia predisposti per diventare case study
-          dettagliati.
+          {t.projects.introduction.toUpperCase()}
         </p>
       </section>
       <section className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3" aria-label="Project list">
@@ -59,7 +54,7 @@ export default function ProjectsPage() {
                 className={buttonVariants({ variant: "outline", className: "mt-5" })}
                 href={`/projects/${project.slug}`}
               >
-                Read case study
+                {t.projects.readCaseStudy.toUpperCase()}
               </Link>
             </div>
           </article>

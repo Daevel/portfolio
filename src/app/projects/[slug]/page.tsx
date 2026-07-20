@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+
+import { use } from "react";
 
 import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
-import { getProjectBySlug, projects } from "@/data/projects";
+import { getProjectBySlug } from "@/data/projects";
+import { useTranslation } from "@/i18n/context";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -13,40 +16,17 @@ type ProjectPageProps = {
   }>;
 };
 
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
-}
-
-export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
-  const { slug } = await params;
+export default function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = use(params);
   const project = getProjectBySlug(slug);
+  const { t } = useTranslation();
 
   if (!project) {
-    return {
-      title: "Project not found",
-    };
-  }
-
-  return {
-    title: project.title,
-    description: project.summary,
-    alternates: {
-      canonical: `/projects/${project.slug}`,
-    },
-    openGraph: {
-      title: project.title,
-      description: project.summary,
-      images: [project.image],
-    },
-  };
-}
-
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params;
-  const project = getProjectBySlug(slug);
-
-  if (!project) {
-    notFound();
+    return (
+      <Container className="py-16 sm:py-24">
+        <p>{t.projectDetail.projectNotFound.toUpperCase()}</p>
+      </Container>
+    );
   }
 
   return (
@@ -56,11 +36,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           className="text-muted-foreground text-sm hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
           href="/projects"
         >
-          Back to projects
+          {t.projectDetail.backToProjects.toUpperCase()}
         </Link>
         <header className="mt-8 max-w-3xl">
           <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-            Case study
+            {t.projectDetail.caseStudyLabel.toUpperCase()}
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
             {project.title}
@@ -77,14 +57,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         />
         <section className="mt-12 grid gap-6 lg:grid-cols-[0.7fr_0.3fr]">
           <div className=" border border-border p-6">
-            <h2 className="text-2xl font-semibold">Case study structure</h2>
+            <h2 className="text-2xl font-semibold">
+              {t.projectDetail.caseStudyStructure.toUpperCase()}
+            </h2>
             <p className="mt-4 text-muted-foreground leading-8">
-              Questa pagina e predisposta per raccontare contesto, problema, processo, decisioni
-              tecniche, risultati e metriche del progetto.
+              {t.projectDetail.caseStudyStructureDescription.toUpperCase()}
             </p>
           </div>
           <aside className=" border border-border p-6">
-            <h2 className="text-lg font-semibold">Technologies</h2>
+            <h2 className="text-lg font-semibold">{t.projectDetail.technologies.toUpperCase()}</h2>
             <div className="mt-4 flex flex-wrap gap-2">
               {project.technologies.map((technology) => (
                 <span
@@ -97,10 +78,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
             <div className="mt-6 grid gap-3">
               <a className={buttonVariants({ variant: "outline" })} href={project.repositoryUrl}>
-                Repository
+                {t.projectDetail.repository.toUpperCase()}
               </a>
               <a className={buttonVariants()} href={project.liveUrl}>
-                Live preview
+                {t.projectDetail.livePreview.toUpperCase()}
               </a>
             </div>
           </aside>

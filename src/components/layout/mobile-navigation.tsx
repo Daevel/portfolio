@@ -6,12 +6,14 @@ import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import { useTranslation } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
 export function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const menuId = useId();
+  const { t } = useTranslation();
 
   return (
     <div className="md:hidden">
@@ -63,7 +65,7 @@ export function MobileNavigation() {
                 key={item.href}
                 onClick={() => setIsOpen(false)}
               >
-                {item.label}
+                {t.navigation[item.key].toUpperCase()}
               </Link>
             );
           })}
