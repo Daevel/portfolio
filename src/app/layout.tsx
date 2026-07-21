@@ -4,6 +4,7 @@ import { Geist } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
+import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import { siteConfig } from "@/config/site";
 import { TranslationProvider } from "@/i18n/context";
 
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    locale: "it_IT",
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -41,8 +42,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html className={geist.variable} lang="it">
+    <html className={geist.variable} lang="en">
       <body className="flex min-h-screen flex-col antialiased">
+        <SmoothScrollProvider />
         <TranslationProvider>
           <SkipToContent />
           <Header />

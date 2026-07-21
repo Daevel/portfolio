@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
+import { SectionReveal } from "@/components/motion/section-reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { featuredProjects } from "@/data/projects";
@@ -17,44 +18,28 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="border-border border-b py-20 sm:py-28">
-        <Container className="grid gap-10 max-w-none lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+      {/* Hero Section */}
+      <section className="relative flex min-h-screen items-center overflow-hidden border-border border-b pt-16">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="pointer-events-none absolute inset-0 size-full object-cover"
+          src="/videos/hero-landing-video.mp4"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <Container className="relative z-10 w-full">
           <Reveal>
-            <p className="mb-4 font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-              {siteConfig.role.toUpperCase()}
-            </p>
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-6xl">
-              {t.home.h1Title.toUpperCase()}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-8">
-              {t.home.pPresentation.toUpperCase()}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link className={buttonVariants({ size: "lg" })} href="/projects">
-                {t.home.viewProjects.toUpperCase()}
-              </Link>
-              <Link className={buttonVariants({ variant: "outline", size: "lg" })} href="/contacts">
-                {t.home.contactMe.toUpperCase()}
-              </Link>
-            </div>
-          </Reveal>
-          <Reveal className=" border border-border bg-muted p-6" delay={0.1}>
-            <div className=" bg-background p-6 shadow-sm">
-              <p className="text-sm text-muted-foreground">{t.home.currentFocus.toUpperCase()}</p>
-              <p className="mt-3 text-2xl font-semibold">
-                {t.home.modernFrontendArchitecture.toUpperCase()}
-              </p>
-              <p className="mt-4 text-muted-foreground leading-7">
-                {t.home.currentFocusDescription.toUpperCase()}
-              </p>
-            </div>
+            <h1 className="text-8xl font-medium text-primary">{siteConfig.role.toUpperCase()}</h1>
           </Reveal>
         </Container>
       </section>
 
       <section className="py-16 sm:py-20">
         <Container className="max-w-none">
-          <Reveal>
+          <SectionReveal>
             <h2 className="font-semibold tracking-tight sm:text-4xl">
               {t.home.coreTechnologies.toUpperCase()}
             </h2>
@@ -82,13 +67,16 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </Reveal>
+          </SectionReveal>
         </Container>
       </section>
 
       <section className="bg-muted py-16 sm:py-20">
         <Container>
-          <Reveal className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <Reveal
+            className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
+            staggerChildren={0.08}
+          >
             <div>
               <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
                 {t.home.featuredProjects.toUpperCase()}
@@ -101,16 +89,16 @@ export default function HomePage() {
               {t.home.allProjects.toUpperCase()}
             </Link>
           </Reveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
-            {featuredProjects.map((project, index) => (
+          <Reveal className="mt-8 grid gap-5 md:grid-cols-2" staggerChildren={0.08}>
+            {featuredProjects.map((project) => (
               <Reveal
-                className=" border border-border bg-background p-4"
-                delay={index * 0.08}
+                className="border border-border bg-background p-4"
                 key={project.slug}
+                variant="scale"
               >
                 <Image
                   alt={`Preview of ${project.title}`}
-                  className="aspect-video  border border-border object-cover"
+                  className="aspect-video border border-border object-cover"
                   height={360}
                   src={project.image}
                   width={640}
@@ -125,13 +113,13 @@ export default function HomePage() {
                 </Link>
               </Reveal>
             ))}
-          </div>
+          </Reveal>
         </Container>
       </section>
 
       <section className="py-16 sm:py-20">
         <Container>
-          <Reveal className=" bg-primary p-8 text-primary-foreground sm:p-10">
+          <Reveal className="bg-primary p-8 text-primary-foreground sm:p-10">
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight">
               {t.home.ctaTitle.toUpperCase()}
             </h2>
@@ -139,7 +127,11 @@ export default function HomePage() {
               {t.home.ctaDescription.toUpperCase()}
             </p>
             <Link
-              className={buttonVariants({ variant: "secondary", size: "lg", className: "mt-6" })}
+              className={buttonVariants({
+                variant: "secondary",
+                size: "lg",
+                className: "mt-6",
+              })}
               href="/contacts"
             >
               {t.home.letsTalk.toUpperCase()}

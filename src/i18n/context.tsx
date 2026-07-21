@@ -18,7 +18,7 @@ const TranslationContext = createContext<TranslationContextValue | null>(null);
 
 export function TranslationProvider({
   children,
-  initialLocale = "it",
+  initialLocale = "en",
 }: {
   children: React.ReactNode;
   initialLocale?: Locale;

@@ -7,10 +7,10 @@ import { siteConfig } from "@/config/site";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-border/70 border-b bg-background/85 backdrop-blur">
-      <Container className="relative flex min-h-16 max-w-none items-start justify-between gap-4 py-3">
+    <header className="pointer-events-none fixed top-0 right-0 bottom-0 left-0 z-40">
+      <Container className="pointer-events-auto relative flex min-h-16 max-w-none items-start justify-between gap-4 p-5">
         <Link
-          className="text-5xl  font-semibold tracking-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+          className="text-primary text-3xl font-semibold tracking-tighter focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
           href="/"
         >
           {siteConfig.name.toUpperCase()}

@@ -12,7 +12,10 @@ export function Navigation() {
   const { t } = useTranslation();
 
   return (
-    <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
+    <nav
+      aria-label="Primary navigation"
+      className="hidden items-center gap-1 md:flex py-2 px-2 bg-white border border-secondary"
+    >
       {siteConfig.navigation.map((item) => {
         const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
@@ -20,8 +23,8 @@ export function Navigation() {
           <Link
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "text-2xl  px-4 py-2 font-medium text-muted-foreground transition-colors hover:bg-primary hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-              isActive && "bg-primary text-foreground",
+              "text-2xl  px-2 py-2 font-medium text-secondary transition-colors hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+              isActive && "bg-primary text-white",
             )}
             href={item.href}
             key={item.href}

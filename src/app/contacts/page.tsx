@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
+import { Reveal } from "@/components/motion/reveal";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "@/i18n/context";
@@ -13,17 +14,19 @@ export default function ContactsPage() {
   return (
     <Container className="py-16 sm:py-24">
       <section className="max-w-3xl">
-        <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-          {t.contacts.sectionLabel.toUpperCase()}
-        </p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-          {t.contacts.h1Title.toUpperCase()}
-        </h1>
-        <p className="mt-6 text-lg text-muted-foreground leading-8">
-          {t.contacts.introduction.toUpperCase()}
-        </p>
+        <Reveal>
+          <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
+            {t.contacts.sectionLabel.toUpperCase()}
+          </p>
+          <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            {t.contacts.h1Title.toUpperCase()}
+          </h1>
+          <p className="mt-6 text-lg text-muted-foreground leading-8">
+            {t.contacts.introduction.toUpperCase()}
+          </p>
+        </Reveal>
       </section>
-      <section className="mt-10 grid gap-4 sm:grid-cols-3" aria-label="Contact links">
+      <Reveal className="mt-10 grid gap-4 sm:grid-cols-3" staggerChildren={0.1}>
         <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
           href={`mailto:${siteConfig.email}`}
@@ -42,7 +45,7 @@ export default function ContactsPage() {
         >
           {t.contacts.linkedin.toUpperCase()}
         </Link>
-      </section>
+      </Reveal>
     </Container>
   );
 }
