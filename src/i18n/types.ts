@@ -21,6 +21,15 @@ export type Translation = {
     featuredProjectsDescription: string;
     allProjects: string;
     readCaseStudy: string;
+    seeMyWorks: string;
+    contacts: string;
+    contactCopiedSuccess: string;
+    contactForm: {
+      fullName: string;
+      email: string;
+      description: string;
+      submit: string;
+    };
     ctaTitle: string;
     ctaDescription: string;
     letsTalk: string;

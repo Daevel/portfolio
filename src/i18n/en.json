@@ -19,6 +19,15 @@
     "featuredProjectsDescription": "Some placeholder projects that will be replaced with real case studies.",
     "allProjects": "All projects",
     "readCaseStudy": "Read case study",
+    "seeMyWorks": "See all my works",
+    "contacts": "Contacts",
+    "contactCopiedSuccess": "Copied with success",
+    "contactForm": {
+      "fullName": "Full name",
+      "email": "Email",
+      "description": "Description",
+      "submit": "Send message"
+    },
     "ctaTitle": "Have a frontend product to design, refine, or scale?",
     "ctaDescription": "The contacts section is ready to be connected to real channels and a future lead generation strategy.",
     "letsTalk": "Let's talk"

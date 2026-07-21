@@ -19,6 +19,15 @@
     "featuredProjectsDescription": "Alcuni progetti placeholder che verranno sostituiti con case study reali.",
     "allProjects": "Tutti i progetti",
     "readCaseStudy": "Leggi case study",
+    "seeMyWorks": "Vedi tutti i miei lavori",
+    "contacts": "Contatti",
+    "contactCopiedSuccess": "Copiato con successo",
+    "contactForm": {
+      "fullName": "Nome completo",
+      "email": "Email",
+      "description": "Descrizione",
+      "submit": "Invia messaggio"
+    },
     "ctaTitle": "Hai un prodotto frontend da progettare, rifinire o scalare?",
     "ctaDescription": "La sezione contatti e pronta per essere collegata ai canali reali e a una futura strategia di lead generation.",
     "letsTalk": "Parliamone"

@@ -1,35 +1,41 @@
 "use client";
 
+import { ArrowDownRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionReveal } from "@/components/motion/section-reveal";
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
-import { featuredProjects } from "@/data/projects";
 import { useTranslation } from "@/i18n/context";
 
 const technologyRows = [siteConfig.technologies.slice(0, 4), siteConfig.technologies.slice(4)];
+const descriptionMaxLength = 500;
+const contactLinks = [
+  { key: "email", label: siteConfig.email, value: siteConfig.email },
+  { key: "linkedin", label: "LinkedIn", value: siteConfig.links.linkedin },
+  { key: "github", label: "Github", value: siteConfig.links.github },
+] as const;
 
 export default function HomePage() {
+  const router = useRouter();
   const { t } = useTranslation();
+  const [description, setDescription] = useState("");
+  const [copiedContact, setCopiedContact] = useState<(typeof contactLinks)[number]["key"] | null>(
+    null,
+  );
+
+  const copyContact = async (contact: (typeof contactLinks)[number]) => {
+    await navigator.clipboard.writeText(contact.value);
+    setCopiedContact(contact.key);
+  };
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative flex min-h-screen items-center overflow-hidden border-border border-b pt-16">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="auto"
-          className="pointer-events-none absolute inset-0 size-full object-cover"
-          src="/videos/hero-landing-video.mp4"
-        />
-        <div className="absolute inset-0 bg-black/60" />
         <Container className="relative z-10 w-full">
           <Reveal>
             <h1 className="text-8xl font-medium text-primary">{siteConfig.role.toUpperCase()}</h1>
@@ -37,10 +43,11 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* Core Technologies Section */}
       <section className="py-16 sm:py-20">
         <Container className="max-w-none">
           <SectionReveal>
-            <h2 className="font-semibold tracking-tight sm:text-4xl">
+            <h2 className="font-semibold tracking-tighter sm:text-4xl">
               {t.home.coreTechnologies.toUpperCase()}
             </h2>
             <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
@@ -71,72 +78,100 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-muted py-16 sm:py-20">
-        <Container>
-          <Reveal
-            className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between"
-            staggerChildren={0.08}
+      {/* Works section */}
+      <section className="py-16 sm:py-20">
+        <Container className="h-auto w-full max-w-none text-center align-bottom">
+          <Button
+            className="h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
+            onClick={() => router.push("/projects")}
+            type="button"
           >
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-                {t.home.featuredProjects.toUpperCase()}
-              </h2>
-              <p className="mt-3 max-w-2xl text-muted-foreground">
-                {t.home.featuredProjectsDescription.toUpperCase()}
-              </p>
-            </div>
-            <Link className={buttonVariants({ variant: "outline" })} href="/projects">
-              {t.home.allProjects.toUpperCase()}
-            </Link>
-          </Reveal>
-          <Reveal className="mt-8 grid gap-5 md:grid-cols-2" staggerChildren={0.08}>
-            {featuredProjects.map((project) => (
-              <Reveal
-                className="border border-border bg-background p-4"
-                key={project.slug}
-                variant="scale"
-              >
-                <Image
-                  alt={`Preview of ${project.title}`}
-                  className="aspect-video border border-border object-cover"
-                  height={360}
-                  src={project.image}
-                  width={640}
-                />
-                <h3 className="mt-5 text-xl font-semibold">{project.title}</h3>
-                <p className="mt-2 text-muted-foreground">{project.summary}</p>
-                <Link
-                  className="mt-4 inline-flex font-medium text-sm hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-                  href={`/projects/${project.slug}`}
-                >
-                  {t.home.readCaseStudy.toUpperCase()}
-                </Link>
-              </Reveal>
-            ))}
-          </Reveal>
+            {t.home.seeMyWorks.toUpperCase()}
+            <ArrowDownRight aria-hidden="true" className="size-[1em]" strokeWidth={2} />
+          </Button>
         </Container>
       </section>
 
+      {/* Contacts section */}
       <section className="py-16 sm:py-20">
-        <Container>
-          <Reveal className="bg-primary p-8 text-primary-foreground sm:p-10">
-            <h2 className="max-w-2xl text-3xl font-semibold tracking-tight">
-              {t.home.ctaTitle.toUpperCase()}
+        <Container className="max-w-none">
+          <SectionReveal>
+            <h2 className="font-semibold tracking-tighter sm:text-4xl">
+              {t.home.contacts.toUpperCase()}
             </h2>
-            <p className="mt-4 max-w-2xl text-primary-foreground/80">
-              {t.home.ctaDescription.toUpperCase()}
-            </p>
-            <Link
-              className={buttonVariants({
-                variant: "secondary",
-                size: "lg",
-                className: "mt-6",
-              })}
-              href="/contacts"
-            >
-              {t.home.letsTalk.toUpperCase()}
-            </Link>
-          </Reveal>
+
+            <div className="flex flex-row">
+              <div className="flex flex-col w-full">
+                {contactLinks.map((contact) => (
+                  <div className="flex flex-col" key={contact.key}>
+                    <button
+                      className="w-fit text-left font-medium text-4xl text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+                      onClick={() => copyContact(contact)}
+                      type="button"
+                    >
+                      {contact.label}
+                    </button>
+                    {copiedContact === contact.key ? (
+                      <p className="mt-4 text-muted-foreground text-sm">
+                        {t.home.contactCopiedSuccess.toUpperCase()}
+                      </p>
+                    ) : null}
+                  </div>
+                ))}
+              </div>
+              <form
+                action={`mailto:${siteConfig.email}`}
+                className="grid gap-6 p-5 sm:p-8"
+                encType="text/plain"
+                method="post"
+              >
+                <div className="grid gap-2">
+                  <label className="font-medium tracking-tighter text-lg" htmlFor="full-name">
+                    {t.home.contactForm.fullName.toUpperCase()}
+                  </label>
+                  <input
+                    className="min-h-12 bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    id="full-name"
+                    name="fullName"
+                    required
+                    type="text"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label className="font-medium tracking-tighter text-lg" htmlFor="email">
+                    {t.home.contactForm.email.toUpperCase()}
+                  </label>
+                  <input
+                    className="min-h-12 bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    id="email"
+                    name="email"
+                    required
+                    type="email"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label className="font-medium tracking-tighter text-l" htmlFor="description">
+                    {t.home.contactForm.description.toUpperCase()}
+                  </label>
+                  <textarea
+                    className="min-h-40 resize-y bg-background px-4 py-3 text-base outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    id="description"
+                    maxLength={descriptionMaxLength}
+                    name="description"
+                    onChange={(event) => setDescription(event.target.value)}
+                    required
+                    value={description}
+                  />
+                  <p className="text-right text-muted-foreground text-sm">
+                    {description.length}/{descriptionMaxLength}
+                  </p>
+                </div>
+                <Button className="justify-self-start" type="submit">
+                  {t.home.contactForm.submit.toUpperCase()}
+                </Button>
+              </form>
+            </div>
+          </SectionReveal>
         </Container>
       </section>
     </>

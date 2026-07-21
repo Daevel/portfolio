@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -10,9 +10,9 @@ import { TranslationProvider } from "@/i18n/context";
 
 import "./globals.css";
 
-const geist = Geist({
+const bricolageGrotesque = Bricolage_Grotesque({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-bricolage-grotesque",
 });
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html className={geist.variable} lang="en">
+    <html className={bricolageGrotesque.variable} lang="en">
       <body className="flex min-h-screen flex-col antialiased">
         <SmoothScrollProvider />
         <TranslationProvider>

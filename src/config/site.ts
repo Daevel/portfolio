@@ -5,10 +5,10 @@ export const siteConfig = {
   description:
     "Personal portfolio of Luigi Avitabile, Frontend Software Engineer specializing in React, Angular, and modern web interfaces.",
   url: "https://example.com",
-  email: "hello@example.com",
+  email: "luigi.avitabile5@gmail.com",
   links: {
-    github: "https://github.com/luigiavitabile",
-    linkedin: "https://www.linkedin.com/in/luigiavitabile",
+    github: "https://github.com/daevel",
+    linkedin: "https://www.linkedin.com/in/luigi-avitabile/",
   },
   navigation: [
     { key: "home" as const, href: "/" },

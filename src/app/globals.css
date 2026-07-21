@@ -13,7 +13,7 @@
   --color-accent: var(--accent);
   --color-destructive: var(--destructive);
   --color-focus-ring: var(--focus-ring);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-bricolage-grotesque);
 }
 
 :root {
@@ -56,7 +56,8 @@ body {
   min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-bricolage-grotesque), system-ui, sans-serif;
+  letter-spacing: -0.05em;
   text-rendering: optimizeLegibility;
 }
 
