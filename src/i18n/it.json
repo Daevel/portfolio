@@ -42,7 +42,7 @@
   },
   "about": {
     "sectionLabel": "Chi sono",
-    "h1Title": "Frontend engineering con attenzione a prodotto, accessibilita e qualita.",
+    "h1Title": "Hey, sono Luigi, conosciuto anche come Daevel.",
     "introduction": "Sono Luigi Avitabile, Frontend Software Engineer. Costruisco interfacce moderne usando React, Angular e TypeScript, con un approccio pragmatico alla scalabilita del codice.",
     "frontendArchitecture": "Architettura frontend",
     "frontendArchitectureDescription": "Strutture chiare, componenti riutilizzabili e confini tecnici comprensibili.",
@@ -75,6 +75,26 @@
     "livePreview": "Anteprima live",
     "projectNotFound": "Progetto non trovato"
   },
+  "privacyPolicy": {
+    "sectionLabel": "Privacy Policy",
+    "h1Title": "Informativa privacy del sito portfolio.",
+    "introduction": "Questa pagina descrive in modo trasparente quali dati possono essere trattati durante la navigazione del portfolio personale di Luigi Avitabile.",
+    "dataControllerTitle": "Titolare del trattamento",
+    "dataControllerDescription": "Il titolare del trattamento e Luigi Avitabile, Frontend Software Engineer e proprietario di questo sito portfolio.",
+    "dataProcessedTitle": "Dati trattati",
+    "dataProcessedDescription": "Il sito puo trattare dati tecnici di navigazione necessari al funzionamento delle pagine, come indirizzo IP, user agent, orario della richiesta e URL visitati.",
+    "purposeTitle": "Finalita del trattamento",
+    "purposeDescription": "I dati tecnici vengono usati per garantire sicurezza, disponibilita, manutenzione e corretto funzionamento del sito.",
+    "cookiesTitle": "Cookie e tracciamento",
+    "cookiesDescription": "Al momento il sito non utilizza cookie di profilazione, strumenti pubblicitari o sistemi di analytics configurati direttamente dal titolare.",
+    "thirdPartiesTitle": "Servizi di terze parti",
+    "thirdPartiesDescription": "Il sito puo essere ospitato o distribuito tramite provider tecnici che trattano dati di log secondo le rispettive informative privacy.",
+    "rightsTitle": "Diritti dell'utente",
+    "rightsDescription": "L'utente puo richiedere accesso, rettifica, cancellazione, limitazione o opposizione al trattamento dei dati personali nei limiti previsti dalla normativa applicabile.",
+    "contactTitle": "Contatti privacy",
+    "contactDescription": "Per richieste relative alla privacy puoi scrivere a",
+    "lastUpdated": "Ultimo aggiornamento: luglio 2026"
+  },
   "notFound": {
     "code": "404",
     "title": "Pagina non trovata",
@@ -82,11 +102,13 @@
     "backHome": "Torna alla home"
   },
   "footer": {
-    "builtWith": "Built with Next.js."
+    "builtWith": "Built with Next.js.",
+    "privacyPolicy": "Privacy Policy"
   },
   "metadata": {
     "aboutDescription": "Profilo professionale di Luigi Avitabile, Frontend Software Engineer.",
     "contactsDescription": "Contatti e link professionali di Luigi Avitabile.",
-    "projectsDescription": "Progetti e case study frontend di Luigi Avitabile."
+    "projectsDescription": "Progetti e case study frontend di Luigi Avitabile.",
+    "privacyPolicyDescription": "Informativa privacy del portfolio personale di Luigi Avitabile."
   }
 }

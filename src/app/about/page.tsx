@@ -1,15 +1,19 @@
 "use client";
 
+import Image from "next/image";
+
 import { Container } from "@/components/layout/container";
-import { Reveal, RevealChild } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
+import { siteConfig } from "@/config/site";
 import { useTranslation } from "@/i18n/context";
+import profileImage from "../../../public/images/luigi-propic.jpeg";
 
 export default function AboutPage() {
   const { t } = useTranslation();
 
   return (
-    <Container className="py-16 sm:py-24">
-      <section className="max-w-3xl">
+    <Container className="py-16 sm:py-24 max-w-none">
+      <section className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_420px]">
         <Reveal>
           <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
             {t.about.sectionLabel.toUpperCase()}
@@ -21,18 +25,40 @@ export default function AboutPage() {
             {t.about.introduction.toUpperCase()}
           </p>
         </Reveal>
+
+        <Reveal className="relative overflow-hidden border border-border bg-secondary">
+          <Image
+            alt={siteConfig.name}
+            className="aspect-4/5 w-full object-cover"
+            height={900}
+            priority
+            src={profileImage}
+            width={720}
+          />
+        </Reveal>
       </section>
-      <Reveal className="mt-12 grid gap-5 md:grid-cols-3" staggerChildren={0.1}>
-        {[
-          [t.about.frontendArchitecture, t.about.frontendArchitectureDescription],
-          [t.about.userExperience, t.about.userExperienceDescription],
-          [t.about.engineeringQuality, t.about.engineeringQualityDescription],
-        ].map(([title, description]) => (
-          <RevealChild className="border border-border p-6" key={title} variant="fade-up">
-            <h2 className="text-xl font-semibold">{title.toUpperCase()}</h2>
-            <p className="mt-3 text-muted-foreground leading-7">{description.toUpperCase()}</p>
-          </RevealChild>
-        ))}
+
+      <Reveal className="mt-12 w-full flex flex-col gap-20">
+        <div className="flex flex-col items-start">
+          <h2 className="text-8xl">1. {t.about.frontendArchitecture.toUpperCase()}</h2>
+          <p className="text-3xl text-secondary/50">
+            {t.about.frontendArchitectureDescription.toUpperCase()}
+          </p>
+        </div>
+
+        <div className="flex flex-col text-right justify-end">
+          <h2 className="text-8xl">2. {t.about.userExperience.toUpperCase()}</h2>
+          <p className="text-3xl text-secondary/50">
+            {t.about.userExperienceDescription.toUpperCase()}
+          </p>
+        </div>
+
+        <div className="flex flex-col">
+          <h2 className="text-8xl">3. {t.about.engineeringQuality.toUpperCase()}</h2>
+          <p className="text-3xl text-secondary/50">
+            {t.about.engineeringQualityDescription.toUpperCase()}
+          </p>
+        </div>
       </Reveal>
     </Container>
   );

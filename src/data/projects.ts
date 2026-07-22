@@ -2,40 +2,31 @@ import type { Project } from "@/types/project";
 
 export const projects = [
   {
-    slug: "frontend-platform-starter",
-    title: "Frontend Platform Starter",
-    summary: "Starter kit per applicazioni frontend scalabili e accessibili.",
+    slug: "followoo",
+    title: "Followoo",
+    summary: "Progetto digitale con focus su esperienza utente, interfaccia e sviluppo frontend.",
     description:
-      "Una base tecnica pensata per team frontend che vogliono standard condivisi, performance misurabili e una developer experience solida.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Biome"],
-    image: "/projects/frontend-platform-starter.svg",
-    repositoryUrl: "https://github.com/luigiavitabile/frontend-platform-starter",
-    liveUrl: "https://example.com/projects/frontend-platform-starter",
+      "Followoo e un progetto pensato per raccontare decisioni di prodotto, sviluppo dell'interfaccia e qualita dell'esperienza frontend.",
+    technologies: ["React", "TypeScript", "Tailwind CSS"],
+    image: "/projects/followoo-logo.svg",
+    profilePic: "/images/luigi-propic.jpeg",
+    repositoryUrl: "https://github.com/daevel",
+    liveUrl: "https://example.com/projects/followoo",
     featured: true,
   },
   {
-    slug: "design-system-lab",
-    title: "Design System Lab",
-    summary: "Esperimenti su componenti UI riutilizzabili e design token.",
+    slug: "culturando",
+    title: "Culturando",
+    summary:
+      "Progetto frontend dedicato alla valorizzazione di contenuti culturali e percorsi digitali.",
     description:
-      "Un laboratorio per esplorare componenti accessibili, varianti tipizzate e integrazione tra design token e interfacce React.",
-    technologies: ["React", "TypeScript", "shadcn/ui", "CSS Variables"],
-    image: "/projects/design-system-lab.svg",
-    repositoryUrl: "https://github.com/luigiavitabile/design-system-lab",
-    liveUrl: "https://example.com/projects/design-system-lab",
+      "Culturando e un progetto orientato alla costruzione di un'esperienza digitale chiara, accessibile e scalabile per contenuti culturali.",
+    technologies: ["Angular", "TypeScript", "RxJS"],
+    image: "/projects/culturando-logo.svg",
+    profilePic: "/images/luigi-propic.jpeg",
+    repositoryUrl: "https://github.com/daevel",
+    liveUrl: "https://example.com/projects/culturando",
     featured: true,
-  },
-  {
-    slug: "angular-dashboard-concept",
-    title: "Angular Dashboard Concept",
-    summary: "Concept dashboard con focus su dati, routing e modularita.",
-    description:
-      "Un progetto dimostrativo per organizzare viste complesse, componenti riutilizzabili e stati applicativi in un contesto Angular moderno.",
-    technologies: ["Angular", "TypeScript", "RxJS", "Accessibility"],
-    image: "/projects/angular-dashboard-concept.svg",
-    repositoryUrl: "https://github.com/luigiavitabile/angular-dashboard-concept",
-    liveUrl: "https://example.com/projects/angular-dashboard-concept",
-    featured: false,
   },
 ] satisfies Project[];
 

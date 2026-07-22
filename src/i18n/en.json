@@ -42,7 +42,7 @@
   },
   "about": {
     "sectionLabel": "About",
-    "h1Title": "Frontend engineering with attention to product, accessibility, and quality.",
+    "h1Title": "Hey, my name is Luigi, also known as Daevel.",
     "introduction": "I'm Luigi Avitabile, Frontend Software Engineer. I build modern interfaces using React, Angular, and TypeScript, with a pragmatic approach to code scalability.",
     "frontendArchitecture": "Frontend architecture",
     "frontendArchitectureDescription": "Clear structures, reusable components, and understandable technical boundaries.",
@@ -75,6 +75,26 @@
     "livePreview": "Live preview",
     "projectNotFound": "Project not found"
   },
+  "privacyPolicy": {
+    "sectionLabel": "Privacy Policy",
+    "h1Title": "Privacy notice for this portfolio website.",
+    "introduction": "This page transparently describes which data may be processed while browsing Luigi Avitabile's personal portfolio.",
+    "dataControllerTitle": "Data controller",
+    "dataControllerDescription": "The data controller is Luigi Avitabile, Frontend Software Engineer and owner of this portfolio website.",
+    "dataProcessedTitle": "Data processed",
+    "dataProcessedDescription": "The website may process technical browsing data required for page operation, such as IP address, user agent, request time, and visited URL.",
+    "purposeTitle": "Processing purposes",
+    "purposeDescription": "Technical data is used to ensure security, availability, maintenance, and correct operation of the website.",
+    "cookiesTitle": "Cookies and tracking",
+    "cookiesDescription": "At the moment, the website does not use profiling cookies, advertising tools, or analytics systems configured directly by the owner.",
+    "thirdPartiesTitle": "Third-party services",
+    "thirdPartiesDescription": "The website may be hosted or distributed through technical providers that process log data according to their own privacy policies.",
+    "rightsTitle": "User rights",
+    "rightsDescription": "Users may request access, rectification, deletion, restriction, or objection to personal data processing within the limits of applicable law.",
+    "contactTitle": "Privacy contacts",
+    "contactDescription": "For privacy-related requests, you can write to",
+    "lastUpdated": "Last updated: July 2026"
+  },
   "notFound": {
     "code": "404",
     "title": "Page not found",
@@ -82,11 +102,13 @@
     "backHome": "Back home"
   },
   "footer": {
-    "builtWith": "Built with Next.js."
+    "builtWith": "Built with Next.js.",
+    "privacyPolicy": "Privacy Policy"
   },
   "metadata": {
     "aboutDescription": "Professional profile of Luigi Avitabile, Frontend Software Engineer.",
     "contactsDescription": "Contact information and professional links for Luigi Avitabile.",
-    "projectsDescription": "Frontend projects and case studies by Luigi Avitabile."
+    "projectsDescription": "Frontend projects and case studies by Luigi Avitabile.",
+    "privacyPolicyDescription": "Privacy notice for the personal portfolio of Luigi Avitabile."
   }
 }

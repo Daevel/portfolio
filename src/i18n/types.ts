@@ -77,6 +77,26 @@ export type Translation = {
     livePreview: string;
     projectNotFound: string;
   };
+  privacyPolicy: {
+    sectionLabel: string;
+    h1Title: string;
+    introduction: string;
+    dataControllerTitle: string;
+    dataControllerDescription: string;
+    dataProcessedTitle: string;
+    dataProcessedDescription: string;
+    purposeTitle: string;
+    purposeDescription: string;
+    cookiesTitle: string;
+    cookiesDescription: string;
+    thirdPartiesTitle: string;
+    thirdPartiesDescription: string;
+    rightsTitle: string;
+    rightsDescription: string;
+    contactTitle: string;
+    contactDescription: string;
+    lastUpdated: string;
+  };
   notFound: {
     code: string;
     title: string;
@@ -85,10 +105,12 @@ export type Translation = {
   };
   footer: {
     builtWith: string;
+    privacyPolicy: string;
   };
   metadata: {
     aboutDescription: string;
     contactsDescription: string;
     projectsDescription: string;
+    privacyPolicyDescription: string;
   };
 };

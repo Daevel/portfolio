@@ -27,4 +27,18 @@ export const siteConfig = {
     { name: "Framer", path: "/tools/Framer.svg" },
     { name: "Figma", path: "/tools/Figma.svg" },
   ],
+  projects: [
+    {
+      name: "Followoo",
+      path: "/projects/followoo-logo.svg",
+      href: "/projects/followoo",
+      backgroundColor: "#0F172A",
+    },
+    {
+      name: "Culturando",
+      path: "/projects/culturando-logo.svg",
+      href: "/projects/culturando",
+      backgroundColor: "#F3A98B",
+    },
+  ],
 } as const;
