@@ -23,10 +23,18 @@
     "contacts": "Contacts",
     "contactCopiedSuccess": "Copied with success",
     "contactForm": {
+      "placeholder": {
+        "fullName": "Enter your full name",
+        "email": "Enter your email",
+        "description": "Enter your message"
+      },
       "fullName": "Full name",
       "email": "Email",
       "description": "Description",
-      "submit": "Send message"
+      "submit": "Submit",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again later."
     },
     "ctaTitle": "Have a frontend product to design, refine, or scale?",
     "ctaDescription": "The contacts section is ready to be connected to real channels and a future lead generation strategy.",

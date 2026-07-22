@@ -36,12 +36,16 @@ export default function ContactsPage() {
         <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
           href={siteConfig.links.github}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {t.contacts.github.toUpperCase()}
         </Link>
         <Link
           className={buttonVariants({ variant: "outline", size: "lg" })}
           href={siteConfig.links.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {t.contacts.linkedin.toUpperCase()}
         </Link>

@@ -25,10 +25,18 @@ export type Translation = {
     contacts: string;
     contactCopiedSuccess: string;
     contactForm: {
+      placeholder: {
+        fullName: string;
+        email: string;
+        description: string;
+      };
       fullName: string;
       email: string;
       description: string;
       submit: string;
+      sending: string;
+      success: string;
+      error: string;
     };
     ctaTitle: string;
     ctaDescription: string;

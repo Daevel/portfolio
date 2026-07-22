@@ -10,25 +10,16 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-border border-t py-8">
-      <Container className="flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-        <p>
-          © {new Date().getFullYear()} {siteConfig.name}. {t.footer.builtWith.toUpperCase()}
-        </p>
-        <nav aria-label="Social links" className="flex gap-4">
-          <Link
-            className="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-            href={siteConfig.links.github}
-          >
-            GitHub
-          </Link>
-          <Link
-            className="hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-            href={siteConfig.links.linkedin}
-          >
-            LinkedIn
-          </Link>
-        </nav>
+    <footer className="border-border border-t py-8 bg-primary">
+      <Container className="flex flex-col gap-4 text-sm text-white sm:flex-row sm:items-center sm:justify-between max-w-none">
+        <div className="flex flex-col">
+          <h1 className="text-8xl tracking-tighter">{siteConfig.name.toUpperCase()}</h1>
+          <p className="text-4xl tracking-tighter">
+            © {new Date().getFullYear()} {siteConfig.name}
+          </p>
+        </div>
+
+        <div className="flex flex-col">TODO</div>
       </Container>
     </footer>
   );
