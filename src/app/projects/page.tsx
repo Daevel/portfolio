@@ -10,15 +10,12 @@ export default function ProjectsPage() {
 
   return (
     <Container className="py-16 sm:py-24 max-w-none">
-      <section className="max-w-4xl">
+      <section>
         <Reveal>
-          <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-            {t.projects.sectionLabel.toUpperCase()}
-          </p>
           <h1 className="mt-4 text-6xl font-semibold tracking-tight">
             {t.projects.h1Title.toUpperCase()}
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-8">
+          <p className="mt-6 text-xl font-bold text-primary leading-8">
             {t.projects.introduction.toUpperCase()}
           </p>
         </Reveal>
