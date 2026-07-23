@@ -10,17 +10,6 @@ export type Translation = {
   };
   home: {
     coreTechnologies: string;
-    h1Title: string;
-    pPresentation: string;
-    viewProjects: string;
-    contactMe: string;
-    currentFocus: string;
-    modernFrontendArchitecture: string;
-    currentFocusDescription: string;
-    featuredProjects: string;
-    featuredProjectsDescription: string;
-    allProjects: string;
-    readCaseStudy: string;
     seeMyWorks: string;
     contacts: string;
     contactCopiedSuccess: string;
@@ -37,16 +26,16 @@ export type Translation = {
       sending: string;
       success: string;
       error: string;
+      validation: {
+        fullName: string;
+        email: string;
+      };
       consent: string;
       privacyConsentPrefix: string;
       privacyConsentSuffix: string;
     };
-    ctaTitle: string;
-    ctaDescription: string;
-    letsTalk: string;
   };
   about: {
-    sectionLabel: string;
     h1Title: string;
     introduction: string;
     frontendArchitecture: string;
@@ -57,28 +46,12 @@ export type Translation = {
     engineeringQualityDescription: string;
     approachTitle: string;
   };
-  contacts: {
-    sectionLabel: string;
-    h1Title: string;
-    introduction: string;
-    email: string;
-    github: string;
-    linkedin: string;
-  };
   projects: {
     sectionLabel: string;
     h1Title: string;
     introduction: string;
-    readCaseStudy: string;
   };
   projectDetail: {
-    backToProjects: string;
-    caseStudyLabel: string;
-    caseStudyStructure: string;
-    caseStudyStructureDescription: string;
-    technologies: string;
-    repository: string;
-    livePreview: string;
     projectNotFound: string;
     visitWebsite: string;
     otherProjects: string;
@@ -111,13 +84,9 @@ export type Translation = {
     backHome: string;
   };
   footer: {
-    builtWith: string;
     privacyPolicy: string;
   };
   metadata: {
-    aboutDescription: string;
-    contactsDescription: string;
-    projectsDescription: string;
     privacyPolicyDescription: string;
   };
 };

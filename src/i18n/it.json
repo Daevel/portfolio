@@ -8,17 +8,6 @@
   },
   "home": {
     "coreTechnologies": "Tecnologie principali",
-    "h1Title": "Creo interfacce web solide, accessibili e orientate al prodotto.",
-    "pPresentation": "Sono Luigi Avitabile, Frontend Software Engineer. Lavoro su esperienze React e Angular con attenzione a performance, manutenibilita e qualita del codice.",
-    "viewProjects": "Vedi progetti",
-    "contactMe": "Contattami",
-    "currentFocus": "Focus attuale",
-    "modernFrontendArchitecture": "Architettura frontend moderna",
-    "currentFocusDescription": "Design system, componenti accessibili, performance e workflow scalabili per prodotti web.",
-    "featuredProjects": "Progetti in evidenza",
-    "featuredProjectsDescription": "Alcuni progetti placeholder che verranno sostituiti con case study reali.",
-    "allProjects": "Tutti i progetti",
-    "readCaseStudy": "Leggi case study",
     "seeMyWorks": "Vedi tutti i miei lavori",
     "contacts": "Contatti",
     "contactCopiedSuccess": "Copiato con successo",
@@ -35,16 +24,16 @@
       "sending": "Invio in corso...",
       "success": "Messaggio inviato con successo!",
       "error": "Errore nell'invio. Riprova più tardi.",
+      "validation": {
+        "fullName": "Inserisci un nome completo valido.",
+        "email": "Inserisci un indirizzo email valido."
+      },
       "consent": "Consenso",
       "privacyConsentPrefix": "Sì, sono d'accordo con la ",
       "privacyConsentSuffix": "."
-    },
-    "ctaTitle": "Hai un prodotto frontend da progettare, rifinire o scalare?",
-    "ctaDescription": "La sezione contatti e pronta per essere collegata ai canali reali e a una futura strategia di lead generation.",
-    "letsTalk": "Parliamone"
+    }
   },
   "about": {
-    "sectionLabel": "Chi sono",
     "h1Title": "Hey, sono Luigi, conosciuto anche come Daevel.",
     "introduction": "Sono Luigi Avitabile, Frontend Software Engineer. Costruisco interfacce moderne usando React, Angular e TypeScript, con un approccio pragmatico alla scalabilita del codice.",
     "frontendArchitecture": "Architettura frontend",
@@ -55,28 +44,12 @@
     "engineeringQualityDescription": "Type safety, linting, performance e attenzione alla manutenzione nel tempo.",
     "approachTitle": "L'approccio giusto per costruire applicazioni web"
   },
-  "contacts": {
-    "sectionLabel": "Contatti",
-    "h1Title": "Parliamo di frontend, prodotto e nuove opportunita.",
-    "introduction": "Sostituisci questi riferimenti con i canali definitivi quando saranno pronti dominio, email professionale e profili aggiornati.",
-    "email": "Email",
-    "github": "GitHub",
-    "linkedin": "LinkedIn"
-  },
   "projects": {
     "sectionLabel": "Progetti",
     "h1Title": "Side projects e basi tecniche da trasformare in case study.",
-    "introduction": "Questa sezione raccoglie progetti placeholder gia predisposti per diventare case study dettagliati.",
-    "readCaseStudy": "Leggi case study"
+    "introduction": "Questa sezione raccoglie progetti placeholder gia predisposti per diventare case study dettagliati."
   },
   "projectDetail": {
-    "backToProjects": "Torna ai progetti",
-    "caseStudyLabel": "Case study",
-    "caseStudyStructure": "Struttura del case study",
-    "caseStudyStructureDescription": "Questa pagina e predisposta per raccontare contesto, problema, processo, decisioni tecniche, risultati e metriche del progetto.",
-    "technologies": "Tecnologie",
-    "repository": "Repository",
-    "livePreview": "Anteprima live",
     "projectNotFound": "Progetto non trovato",
     "visitWebsite": "Visita il sito",
     "otherProjects": "Altri progetti",
@@ -109,13 +82,9 @@
     "backHome": "Torna alla home"
   },
   "footer": {
-    "builtWith": "Built with Next.js.",
     "privacyPolicy": "Privacy Policy"
   },
   "metadata": {
-    "aboutDescription": "Profilo professionale di Luigi Avitabile, Frontend Software Engineer.",
-    "contactsDescription": "Contatti e link professionali di Luigi Avitabile.",
-    "projectsDescription": "Progetti e case study frontend di Luigi Avitabile.",
     "privacyPolicyDescription": "Informativa privacy del portfolio personale di Luigi Avitabile."
   }
 }

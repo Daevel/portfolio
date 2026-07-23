@@ -13,8 +13,14 @@ export function ContactSection({ className }: ContactSectionProps) {
   const { t } = useTranslation();
   const {
     formRef,
+    fullName,
+    setFullName,
+    email,
+    setEmail,
     description,
     setDescription,
+    fieldErrors,
+    setFieldErrors,
     copiedContact,
     isSending,
     formStatus,
@@ -70,7 +76,7 @@ export function ContactSection({ className }: ContactSectionProps) {
 
             {/* Contact form */}
             <div className="flex flex-col w-full mb-10">
-              <form ref={formRef} className="grid gap-6" onSubmit={sendEmail}>
+              <form ref={formRef} className="grid gap-6" noValidate onSubmit={sendEmail}>
                 <div className="grid gap-2">
                   <label
                     className="font-medium tracking-tighter text-lg text-primary"
@@ -79,13 +85,28 @@ export function ContactSection({ className }: ContactSectionProps) {
                     {t.home.contactForm.fullName.toUpperCase()}
                   </label>
                   <input
-                    className="min-h-12 text-4xl font-medium bg-background outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    aria-describedby={fieldErrors.fullName ? "full-name-error" : undefined}
+                    aria-invalid={fieldErrors.fullName}
+                    className="min-h-14 py-2 text-4xl font-medium leading-[1.2] bg-background outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="full-name"
                     name="name"
+                    onChange={(event) => {
+                      setFullName(event.target.value);
+                      setFieldErrors((currentErrors) => ({
+                        ...currentErrors,
+                        fullName: currentErrors.fullName && event.target.value.trim().length < 2,
+                      }));
+                    }}
                     required
                     type="text"
+                    value={fullName}
                     placeholder={t.home.contactForm.placeholder.fullName}
                   />
+                  {fieldErrors.fullName && (
+                    <p className="text-destructive text-sm" id="full-name-error">
+                      {t.home.contactForm.validation.fullName.toUpperCase()}
+                    </p>
+                  )}
                 </div>
                 <div className="grid gap-2">
                   <label
@@ -95,13 +116,28 @@ export function ContactSection({ className }: ContactSectionProps) {
                     {t.home.contactForm.email.toUpperCase()}
                   </label>
                   <input
-                    className="min-h-12 bg-background text-4xl font-medium outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    aria-describedby={fieldErrors.email ? "email-error" : undefined}
+                    aria-invalid={fieldErrors.email}
+                    className="min-h-14 py-2 bg-background text-4xl font-medium leading-[1.2] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="email"
                     name="email"
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                      setFieldErrors((currentErrors) => ({
+                        ...currentErrors,
+                        email: false,
+                      }));
+                    }}
                     required
                     type="email"
+                    value={email}
                     placeholder={t.home.contactForm.placeholder.email}
                   />
+                  {fieldErrors.email && (
+                    <p className="text-destructive text-sm" id="email-error">
+                      {t.home.contactForm.validation.email.toUpperCase()}
+                    </p>
+                  )}
                 </div>
                 <div className="grid gap-2">
                   <label
@@ -111,7 +147,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                     {t.home.contactForm.description.toUpperCase()}
                   </label>
                   <textarea
-                    className="min-h-40 resize-y py-3 bg-background text-4xl font-medium  outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="max-h-80 min-h-40 resize-y overflow-y-auto overscroll-contain py-3 bg-background text-4xl font-medium leading-[1.2] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="description"
                     maxLength={descriptionMaxLength}
                     name="description"
@@ -137,7 +173,10 @@ export function ContactSection({ className }: ContactSectionProps) {
                       required
                       type="checkbox"
                     />
-                    <label className="text-sm text-primary" htmlFor="checkbox-agreement">
+                    <label
+                      className="text-sm tracking-tight text-primary"
+                      htmlFor="checkbox-agreement"
+                    >
                       {t.home.contactForm.privacyConsentPrefix}
                       <Link
                         className="underline underline-offset-2 text-secondary"

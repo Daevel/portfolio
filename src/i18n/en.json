@@ -8,17 +8,6 @@
   },
   "home": {
     "coreTechnologies": "Core technologies",
-    "h1Title": "I build solid, accessible, product-oriented web interfaces.",
-    "pPresentation": "I'm Luigi Avitabile, Frontend Software Engineer. I work on React and Angular experiences with a focus on performance, maintainability, and code quality.",
-    "viewProjects": "View projects",
-    "contactMe": "Contact me",
-    "currentFocus": "Current focus",
-    "modernFrontendArchitecture": "Modern frontend architecture",
-    "currentFocusDescription": "Design systems, accessible components, performance, and scalable workflows for web products.",
-    "featuredProjects": "Featured projects",
-    "featuredProjectsDescription": "Some placeholder projects that will be replaced with real case studies.",
-    "allProjects": "All projects",
-    "readCaseStudy": "Read case study",
     "seeMyWorks": "See all my works",
     "contacts": "Contacts",
     "contactCopiedSuccess": "Copied with success",
@@ -35,18 +24,18 @@
       "sending": "Sending...",
       "success": "Message sent successfully!",
       "error": "Error sending message. Please try again later.",
+      "validation": {
+        "fullName": "Enter a valid full name.",
+        "email": "Enter a valid email address."
+      },
       "consent": "Consent",
       "privacyConsentPrefix": "Yes, I agree with the ",
       "privacyConsentSuffix": "."
-    },
-    "ctaTitle": "Have a frontend product to design, refine, or scale?",
-    "ctaDescription": "The contacts section is ready to be connected to real channels and a future lead generation strategy.",
-    "letsTalk": "Let's talk"
+    }
   },
   "about": {
-    "sectionLabel": "About",
-    "h1Title": "Hey, my name is Luigi, also known as Daevel.",
-    "introduction": "I'm Luigi Avitabile, Frontend Software Engineer. I build modern interfaces using React, Angular, and TypeScript, with a pragmatic approach to code scalability.",
+    "h1Title": "Hello there! My name is Luigi, also known as Daevel.",
+    "introduction": "I'm a Frontend Software Engineer. I build modern interfaces using React, Angular, and TypeScript, with a pragmatic approach to code scalability.",
     "frontendArchitecture": "Frontend architecture",
     "frontendArchitectureDescription": "Clear structures, reusable components, and understandable technical boundaries.",
     "userExperience": "User experience",
@@ -55,28 +44,12 @@
     "engineeringQualityDescription": "Type safety, linting, performance, and attention to long-term maintainability.",
     "approachTitle": "The right approach to building web applications"
   },
-  "contacts": {
-    "sectionLabel": "Contacts",
-    "h1Title": "Let's talk about frontend, products, and new opportunities.",
-    "introduction": "Replace these references with the final channels when ready: domain, professional email, and updated profiles.",
-    "email": "Email",
-    "github": "GitHub",
-    "linkedin": "LinkedIn"
-  },
   "projects": {
     "sectionLabel": "Projects",
     "h1Title": "Side projects and technical foundations to turn into case studies.",
-    "introduction": "This section collects placeholder projects already set up to become detailed case studies.",
-    "readCaseStudy": "Read case study"
+    "introduction": "This section collects placeholder projects already set up to become detailed case studies."
   },
   "projectDetail": {
-    "backToProjects": "Back to projects",
-    "caseStudyLabel": "Case study",
-    "caseStudyStructure": "Case study structure",
-    "caseStudyStructureDescription": "This page is set up to tell the story of context, problem, process, technical decisions, results, and project metrics.",
-    "technologies": "Technologies",
-    "repository": "Repository",
-    "livePreview": "Live preview",
     "projectNotFound": "Project not found",
     "visitWebsite": "Visit the website",
     "otherProjects": "Other projects",
@@ -109,13 +82,9 @@
     "backHome": "Back home"
   },
   "footer": {
-    "builtWith": "Built with Next.js.",
     "privacyPolicy": "privacy policy"
   },
   "metadata": {
-    "aboutDescription": "Professional profile of Luigi Avitabile, Frontend Software Engineer.",
-    "contactsDescription": "Contact information and professional links for Luigi Avitabile.",
-    "projectsDescription": "Frontend projects and case studies by Luigi Avitabile.",
     "privacyPolicyDescription": "Privacy notice for the personal portfolio of Luigi Avitabile."
   }
 }

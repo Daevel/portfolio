@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 
 const descriptionMaxLength = 200;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const contactLinks = [{ key: "email", label: siteConfig.email, value: siteConfig.email }] as const;
 
@@ -13,7 +14,10 @@ const socialLinks = [
 
 export function useContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
+  const [fieldErrors, setFieldErrors] = useState({ fullName: false, email: false });
   const [copiedContact, setCopiedContact] = useState<(typeof contactLinks)[number]["key"] | null>(
     null,
   );
@@ -31,6 +35,15 @@ export function useContactForm() {
     e.preventDefault();
     if (!formRef.current) return;
 
+    const nextFieldErrors = {
+      fullName: fullName.trim().length < 2,
+      email: !emailRegex.test(email.trim()),
+    };
+
+    setFieldErrors(nextFieldErrors);
+
+    if (nextFieldErrors.fullName || nextFieldErrors.email) return;
+
     setIsSending(true);
     setFormStatus("idle");
 
@@ -43,7 +56,10 @@ export function useContactForm() {
       );
       setFormStatus("success");
       formRef.current.reset();
+      setFullName("");
+      setEmail("");
       setDescription("");
+      setFieldErrors({ fullName: false, email: false });
       setAgreedToPrivacy(false);
       setTimeout(() => setFormStatus("idle"), 5000);
     } catch {
@@ -56,8 +72,14 @@ export function useContactForm() {
 
   return {
     formRef,
+    fullName,
+    setFullName,
+    email,
+    setEmail,
     description,
     setDescription,
+    fieldErrors,
+    setFieldErrors,
     copiedContact,
     isSending,
     formStatus,

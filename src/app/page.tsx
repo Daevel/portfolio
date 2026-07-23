@@ -24,7 +24,9 @@ export default function HomePage() {
       <section className="relative flex min-h-screen items-center overflow-hidden border-border border-b pt-16">
         <Container className="relative z-10 w-full">
           <Reveal>
-            <h1 className="text-8xl font-medium text-primary">{siteConfig.role.toUpperCase()}</h1>
+            <h1 className="text-9xl text-center justify-center font-bold text-primary tracking-tighter">
+              {siteConfig.role.toUpperCase()}
+            </h1>
           </Reveal>
         </Container>
       </section>
