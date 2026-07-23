@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Antonio } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -10,9 +10,10 @@ import { TranslationProvider } from "@/i18n/context";
 
 import "./globals.css";
 
-const bricolageGrotesque = Bricolage_Grotesque({
+const antonio = Antonio({
   subsets: ["latin"],
-  variable: "--font-bricolage-grotesque",
+  variable: "--font-antonio",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html className={bricolageGrotesque.variable} lang="en">
+    <html className={antonio.variable} lang="en">
       <body className="flex min-h-screen flex-col antialiased">
         <SmoothScrollProvider />
         <TranslationProvider>

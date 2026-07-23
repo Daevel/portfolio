@@ -34,7 +34,10 @@
       "submit": "Submit",
       "sending": "Sending...",
       "success": "Message sent successfully!",
-      "error": "Error sending message. Please try again later."
+      "error": "Error sending message. Please try again later.",
+      "consent": "Consent",
+      "privacyConsentPrefix": "Yes, I agree with the ",
+      "privacyConsentSuffix": "."
     },
     "ctaTitle": "Have a frontend product to design, refine, or scale?",
     "ctaDescription": "The contacts section is ready to be connected to real channels and a future lead generation strategy.",
@@ -73,7 +76,10 @@
     "technologies": "Technologies",
     "repository": "Repository",
     "livePreview": "Live preview",
-    "projectNotFound": "Project not found"
+    "projectNotFound": "Project not found",
+    "visitWebsite": "Visit the website",
+    "otherProjects": "Other projects",
+    "seeAllProjects": "See all projects"
   },
   "privacyPolicy": {
     "sectionLabel": "Privacy Policy",
@@ -103,7 +109,7 @@
   },
   "footer": {
     "builtWith": "Built with Next.js.",
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "privacy policy"
   },
   "metadata": {
     "aboutDescription": "Professional profile of Luigi Avitabile, Frontend Software Engineer.",

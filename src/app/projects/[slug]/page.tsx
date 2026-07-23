@@ -1,12 +1,14 @@
 "use client";
 
+import { ArrowDownRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 import { use } from "react";
-
 import { Container } from "@/components/layout/container";
-import { buttonVariants } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/reveal";
+import { SectionReveal } from "@/components/motion/section-reveal";
+import { ProjectsShowcase } from "@/components/sections/projects-showcase";
+import { Button } from "@/components/ui/button";
 import { getProjectBySlug } from "@/data/projects";
 import { useTranslation } from "@/i18n/context";
 
@@ -20,6 +22,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = use(params);
   const project = getProjectBySlug(slug);
   const { t } = useTranslation();
+  const router = useRouter();
 
   if (!project) {
     return (
@@ -30,63 +33,95 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   }
 
   return (
-    <Container className="py-16 sm:py-24">
-      <article>
-        <Link
-          className="text-muted-foreground text-sm hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
-          href="/projects"
-        >
-          {t.projectDetail.backToProjects.toUpperCase()}
-        </Link>
-        <header className="mt-8 max-w-3xl">
-          <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-            {t.projectDetail.caseStudyLabel.toUpperCase()}
-          </p>
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-            {project.title}
-          </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-8">{project.description}</p>
-        </header>
+    <>
+      <section className="relative flex min-h-screen items-end overflow-hidden border-border border-b pt-16">
         <Image
-          alt={`Preview of ${project.title}`}
-          className="mt-10 aspect-video border border-border object-cover"
-          height={720}
+          alt={`${project.title} logo`}
+          className="object-cover"
+          fill
           priority
           src={project.image}
-          width={1280}
         />
-        <section className="mt-12 grid gap-6 lg:grid-cols-[0.7fr_0.3fr]">
-          <div className=" border border-border p-6">
-            <h2 className="text-2xl font-semibold">
-              {t.projectDetail.caseStudyStructure.toUpperCase()}
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-8">
-              {t.projectDetail.caseStudyStructureDescription.toUpperCase()}
-            </p>
-          </div>
-          <aside className=" border border-border p-6">
-            <h2 className="text-lg font-semibold">{t.projectDetail.technologies.toUpperCase()}</h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {project.technologies.map((technology) => (
-                <span
-                  className=" bg-secondary px-3 py-1 text-secondary-foreground text-xs"
-                  key={technology}
-                >
-                  {technology}
-                </span>
-              ))}
-            </div>
-            <div className="mt-6 grid gap-3">
-              <a className={buttonVariants({ variant: "outline" })} href={project.repositoryUrl}>
-                {t.projectDetail.repository.toUpperCase()}
-              </a>
-              <a className={buttonVariants()} href={project.liveUrl}>
-                {t.projectDetail.livePreview.toUpperCase()}
-              </a>
-            </div>
-          </aside>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <Container className="relative m-0 z-10 w-full pb-12">
+          <Reveal>
+            <h1 className="text-6xl font-medium text-white tracking-tighter sm:text-8xl">
+              {project.title.toUpperCase()}
+            </h1>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Project Description */}
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-none">
+          <Reveal>
+            <p className="text-6xl text-muted-foreground">{project.description.toUpperCase()}</p>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* Grid Images */}
+      {project.images.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <Container className="max-w-none">
+            <SectionReveal>
+              <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
+                <div className="grid grid-cols-2">
+                  {project.images.map((image, index) => (
+                    <div
+                      className="group relative grid aspect-video w-full place-items-center overflow-hidden border border-border p-3"
+                      key={index}
+                    >
+                      <Image
+                        alt={`${project.title} screenshot ${index + 1}`}
+                        className="object-contain transition"
+                        height={720}
+                        src={image}
+                        width={1280}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </SectionReveal>
+          </Container>
         </section>
-      </article>
-    </Container>
+      )}
+
+      {/* Visit Website CTA */}
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-none text-center">
+          <Button
+            className="h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
+            onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
+            type="button"
+          >
+            {t.projectDetail.visitWebsite.toUpperCase()}
+            <ArrowDownRight aria-hidden="true" className="size-[1em]" strokeWidth={2} />
+          </Button>
+        </Container>
+      </section>
+
+      {/* Other Works section */}
+      <section className="py-16 sm:py-24">
+        <Container className="max-w-none">
+          <ProjectsShowcase
+            excludeSlug={slug}
+            fullWidth={false}
+            showTitle={true}
+            title={t.projectDetail.otherProjects}
+          />
+          <Button
+            className="mt-10 h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
+            onClick={() => router.push("/projects")}
+            type="button"
+          >
+            {t.projectDetail.seeAllProjects.toUpperCase()}
+            <ArrowDownRight aria-hidden="true" className="size-[1em]" strokeWidth={2} />
+          </Button>
+        </Container>
+      </section>
+    </>
   );
 }

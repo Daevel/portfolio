@@ -30,13 +30,13 @@ export const siteConfig = {
   projects: [
     {
       name: "Followoo",
-      path: "/projects/followoo-logo.svg",
+      path: "/projects/followoo/followoo-logo.svg",
       href: "/projects/followoo",
       backgroundColor: "#0F172A",
     },
     {
       name: "Culturando",
-      path: "/projects/culturando-logo.svg",
+      path: "/projects/culturando/culturando-logo.svg",
       href: "/projects/culturando",
       backgroundColor: "#F3A98B",
     },

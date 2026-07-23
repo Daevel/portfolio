@@ -1,19 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
 import { Container } from "@/components/layout/container";
-import { Reveal, RevealChild } from "@/components/motion/reveal";
-import { buttonVariants } from "@/components/ui/button";
-import { projects } from "@/data/projects";
+import { Reveal } from "@/components/motion/reveal";
+import { ProjectsShowcase } from "@/components/sections/projects-showcase";
 import { useTranslation } from "@/i18n/context";
 
 export default function ProjectsPage() {
   const { t } = useTranslation();
 
   return (
-    <Container className="py-16 sm:py-24">
+    <Container className="py-16 sm:py-24 max-w-none">
       <section className="max-w-4xl">
         <Reveal>
           <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
@@ -27,43 +23,7 @@ export default function ProjectsPage() {
           </p>
         </Reveal>
       </section>
-      <Reveal className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3" staggerChildren={0.08}>
-        {projects.map((project) => (
-          <RevealChild
-            className="flex flex-col border border-border bg-background p-4"
-            key={project.slug}
-            variant="scale"
-          >
-            <Image
-              alt={`Preview of ${project.title}`}
-              className="aspect-video border border-border object-cover"
-              height={300}
-              src={project.image}
-              width={520}
-            />
-            <div className="flex flex-1 flex-col pt-5">
-              <h2 className="text-xl font-semibold">{project.title}</h2>
-              <p className="mt-2 flex-1 text-muted-foreground leading-7">{project.summary}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.technologies.map((technology) => (
-                  <span
-                    className="bg-secondary px-3 py-1 text-secondary-foreground text-xs"
-                    key={technology}
-                  >
-                    {technology}
-                  </span>
-                ))}
-              </div>
-              <Link
-                className={buttonVariants({ variant: "outline", className: "mt-5" })}
-                href={`/projects/${project.slug}`}
-              >
-                {t.projects.readCaseStudy.toUpperCase()}
-              </Link>
-            </div>
-          </RevealChild>
-        ))}
-      </Reveal>
+      <ProjectsShowcase className="mt-12" />
     </Container>
   );
 }

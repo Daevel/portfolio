@@ -37,6 +37,9 @@ export type Translation = {
       sending: string;
       success: string;
       error: string;
+      consent: string;
+      privacyConsentPrefix: string;
+      privacyConsentSuffix: string;
     };
     ctaTitle: string;
     ctaDescription: string;
@@ -76,6 +79,9 @@ export type Translation = {
     repository: string;
     livePreview: string;
     projectNotFound: string;
+    visitWebsite: string;
+    otherProjects: string;
+    seeAllProjects: string;
   };
   privacyPolicy: {
     sectionLabel: string;

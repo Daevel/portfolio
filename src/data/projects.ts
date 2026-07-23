@@ -6,12 +6,13 @@ export const projects = [
     title: "Followoo",
     summary: "Progetto digitale con focus su esperienza utente, interfaccia e sviluppo frontend.",
     description:
-      "Followoo e un progetto pensato per raccontare decisioni di prodotto, sviluppo dell'interfaccia e qualita dell'esperienza frontend.",
+      "Followoo is a privacy-focused tool that allows you to analyze your Instagram relationships directly in the browser using the ZIP file provided by Instagram's official data export.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
-    image: "/projects/followoo-logo.svg",
+    image: "/projects/followoo/followoo-logo.svg",
+    images: ["/projects/followoo/hero-page.png", "/projects/followoo/results-page.png"],
     profilePic: "/images/luigi-propic.jpeg",
     repositoryUrl: "https://github.com/daevel",
-    liveUrl: "https://example.com/projects/followoo",
+    liveUrl: "https://followoo.app",
     featured: true,
   },
   {
@@ -20,12 +21,13 @@ export const projects = [
     summary:
       "Progetto frontend dedicato alla valorizzazione di contenuti culturali e percorsi digitali.",
     description:
-      "Culturando e un progetto orientato alla costruzione di un'esperienza digitale chiara, accessibile e scalabile per contenuti culturali.",
+      "Culturando è una web app geolocalizzata per condividere e scoprire patrimoni librari privati. Permette agli utenti di pubblicare libri, cercare volumi vicini su mappa 3D, richiedere consultazioni o prestiti e usare funzioni AI per catalogare libri da copertina, tutelando privacy e posizione.",
     technologies: ["Angular", "TypeScript", "RxJS"],
-    image: "/projects/culturando-logo.svg",
+    image: "/projects/culturando/culturando-logo.svg",
+    images: [],
     profilePic: "/images/luigi-propic.jpeg",
     repositoryUrl: "https://github.com/daevel",
-    liveUrl: "https://example.com/projects/culturando",
+    liveUrl: "https://daevel.me",
     featured: true,
   },
 ] satisfies Project[];

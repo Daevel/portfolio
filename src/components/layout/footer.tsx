@@ -10,7 +10,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-border border-t py-8 bg-primary">
+    <footer className="border-border border-t py-0 bg-primary">
       <Container className="flex items-start gap-4 text-sm text-white sm:flex-row sm:justify-between max-w-none">
         <div className="flex flex-col gap-y-50">
           <h1 className="text-8xl font-medium tracking-tighter">{siteConfig.name.toUpperCase()}</h1>
