@@ -52,7 +52,8 @@
     "userExperience": "User experience",
     "userExperienceDescription": "Responsive, accessible interfaces aligned with product goals.",
     "engineeringQuality": "Engineering quality",
-    "engineeringQualityDescription": "Type safety, linting, performance, and attention to long-term maintainability."
+    "engineeringQualityDescription": "Type safety, linting, performance, and attention to long-term maintainability.",
+    "approachTitle": "The right approach to building web applications"
   },
   "contacts": {
     "sectionLabel": "Contacts",

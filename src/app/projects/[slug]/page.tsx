@@ -67,10 +67,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <Container className="max-w-none">
             <SectionReveal>
               <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-2 gap-1">
                   {project.images.map((image, index) => (
                     <div
-                      className="group relative grid aspect-video w-full place-items-center overflow-hidden border border-border p-3"
+                      className="group relative grid aspect-video w-full place-items-center overflow-hidden border border-border"
                       key={index}
                     >
                       <Image
@@ -105,20 +105,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Other Works section */}
       <section className="py-16 sm:py-24">
+        <ProjectsShowcase
+          className="max-w-none"
+          excludeSlug={slug}
+          fullWidth={false}
+          showTitle={true}
+          title={t.projectDetail.otherProjects}
+        />
         <Container className="max-w-none">
-          <ProjectsShowcase
-            excludeSlug={slug}
-            fullWidth={false}
-            showTitle={true}
-            title={t.projectDetail.otherProjects}
-          />
           <Button
             className="mt-10 h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
             onClick={() => router.push("/projects")}
             type="button"
           >
             {t.projectDetail.seeAllProjects.toUpperCase()}
-            <ArrowDownRight aria-hidden="true" className="size-[1em]" strokeWidth={2} />
+            <ArrowDownRight aria-hidden="true" className="size-[1.5em]" strokeWidth={2} />
           </Button>
         </Container>
       </section>

@@ -55,6 +55,7 @@ export type Translation = {
     userExperienceDescription: string;
     engineeringQuality: string;
     engineeringQualityDescription: string;
+    approachTitle: string;
   };
   contacts: {
     sectionLabel: string;

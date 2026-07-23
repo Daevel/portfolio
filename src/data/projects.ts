@@ -9,7 +9,12 @@ export const projects = [
       "Followoo is a privacy-focused tool that allows you to analyze your Instagram relationships directly in the browser using the ZIP file provided by Instagram's official data export.",
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     image: "/projects/followoo/followoo-logo.svg",
-    images: ["/projects/followoo/hero-page.png", "/projects/followoo/results-page.png"],
+    images: [
+      "/projects/followoo/hero-page.png",
+      "/projects/followoo/results-page.png",
+      "/projects/followoo/search-page.png",
+      "/projects/followoo/upload-page.png",
+    ],
     profilePic: "/images/luigi-propic.jpeg",
     repositoryUrl: "https://github.com/daevel",
     liveUrl: "https://followoo.app",

@@ -52,7 +52,8 @@
     "userExperience": "Esperienza utente",
     "userExperienceDescription": "Interfacce responsive, accessibili e coerenti con gli obiettivi del prodotto.",
     "engineeringQuality": "Qualita ingegneristica",
-    "engineeringQualityDescription": "Type safety, linting, performance e attenzione alla manutenzione nel tempo."
+    "engineeringQualityDescription": "Type safety, linting, performance e attenzione alla manutenzione nel tempo.",
+    "approachTitle": "L'approccio giusto per costruire applicazioni web"
   },
   "contacts": {
     "sectionLabel": "Contatti",

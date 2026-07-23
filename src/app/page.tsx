@@ -76,7 +76,7 @@ export default function HomePage() {
             type="button"
           >
             {t.home.seeMyWorks.toUpperCase()}
-            <ArrowDownRight aria-hidden="true" className="size-[1em]" strokeWidth={2} />
+            <ArrowDownRight aria-hidden="true" className="size-[1.5em]" strokeWidth={2} />
           </Button>
         </Container>
       </section>
