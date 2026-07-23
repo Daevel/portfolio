@@ -46,8 +46,8 @@
   },
   "projects": {
     "sectionLabel": "Progetti",
-    "h1Title": "Side projects e basi tecniche da trasformare in case study.",
-    "introduction": "Questa sezione raccoglie progetti placeholder gia predisposti per diventare case study dettagliati."
+    "h1Title": "Prodotti, esperimenti e strumenti frontend costruiti per risolvere problemi reali.",
+    "introduction": "Una selezione di progetti guidati da obiettivi concreti: dall'idea iniziale alle scelte tecniche, fino all'esperienza finale."
   },
   "projectDetail": {
     "projectNotFound": "Progetto non trovato",

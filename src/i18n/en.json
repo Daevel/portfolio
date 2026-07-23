@@ -46,8 +46,8 @@
   },
   "projects": {
     "sectionLabel": "Projects",
-    "h1Title": "Side projects and technical foundations to turn into case studies.",
-    "introduction": "This section collects placeholder projects already set up to become detailed case studies."
+    "h1Title": "Products, experiments, and frontend tools built to solve real problems.",
+    "introduction": "A selection of project-driven work shaped by concrete goals: from the initial idea to technical decisions and the final experience."
   },
   "projectDetail": {
     "projectNotFound": "Project not found",
