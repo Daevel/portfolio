@@ -41,7 +41,7 @@ export function MobileNavigation() {
             )}
           />
         </span>
-        Menu
+        {t.navigation.menu}
       </Button>
       <div
         className={cn(

@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "Luigi Avitabile",
-  role: "Frontend Software Engineer",
-  title: "Luigi Avitabile | Frontend Software Engineer",
+  role: "Frontend Engineer",
+  title: "Luigi Avitabile | Frontend Engineer",
   description:
-    "Personal portfolio of Luigi Avitabile, Frontend Software Engineer specializing in React, Angular, and modern web interfaces.",
+    "Personal portfolio of Luigi Avitabile, Frontend Engineer specializing in React, Angular, and modern web interfaces.",
   url: "https://example.com",
   email: "luigi.avitabile5@gmail.com",
   links: {

@@ -2,28 +2,33 @@ import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 
-const descriptionMaxLength = 200;
+const messageMaxLength = 200;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const contactLinks = [{ key: "email", label: siteConfig.email, value: siteConfig.email }] as const;
 
-const socialLinks = [
-  { key: "linkedin", label: "LinkedIn", href: siteConfig.links.linkedin },
-  { key: "github", label: "Github", href: siteConfig.links.github },
-] as const;
+type SocialLinkLabels = {
+  linkedin: string;
+  github: string;
+};
 
-export function useContactForm() {
+export function useContactForm(socialLinkLabels: SocialLinkLabels) {
   const formRef = useRef<HTMLFormElement>(null);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
-  const [fieldErrors, setFieldErrors] = useState({ fullName: false, email: false });
+  const [message, setMessage] = useState("");
+  const [fieldErrors, setFieldErrors] = useState({ fullName: false, email: false, message: false });
   const [copiedContact, setCopiedContact] = useState<(typeof contactLinks)[number]["key"] | null>(
     null,
   );
   const [isSending, setIsSending] = useState(false);
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">("idle");
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+
+  const socialLinks = [
+    { key: "linkedin", label: socialLinkLabels.linkedin, href: siteConfig.links.linkedin },
+    { key: "github", label: socialLinkLabels.github, href: siteConfig.links.github },
+  ] as const;
 
   const copyContact = async (contact: (typeof contactLinks)[number]) => {
     await navigator.clipboard.writeText(contact.value);
@@ -38,11 +43,12 @@ export function useContactForm() {
     const nextFieldErrors = {
       fullName: fullName.trim().length < 2,
       email: !emailRegex.test(email.trim()),
+      message: message.trim().length === 0,
     };
 
     setFieldErrors(nextFieldErrors);
 
-    if (nextFieldErrors.fullName || nextFieldErrors.email) return;
+    if (nextFieldErrors.fullName || nextFieldErrors.email || nextFieldErrors.message) return;
 
     setIsSending(true);
     setFormStatus("idle");
@@ -58,8 +64,8 @@ export function useContactForm() {
       formRef.current.reset();
       setFullName("");
       setEmail("");
-      setDescription("");
-      setFieldErrors({ fullName: false, email: false });
+      setMessage("");
+      setFieldErrors({ fullName: false, email: false, message: false });
       setAgreedToPrivacy(false);
       setTimeout(() => setFormStatus("idle"), 5000);
     } catch {
@@ -76,8 +82,8 @@ export function useContactForm() {
     setFullName,
     email,
     setEmail,
-    description,
-    setDescription,
+    message,
+    setMessage,
     fieldErrors,
     setFieldErrors,
     copiedContact,
@@ -87,7 +93,7 @@ export function useContactForm() {
     setAgreedToPrivacy,
     contactLinks,
     socialLinks,
-    descriptionMaxLength,
+    messageMaxLength,
     copyContact,
     sendEmail,
   };

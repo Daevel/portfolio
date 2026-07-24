@@ -7,8 +7,10 @@ export type Translation = {
     about: string;
     projects: string;
     contacts: string;
+    menu: string;
   };
   home: {
+    heroTitle: string;
     coreTechnologies: string;
     seeMyWorks: string;
     contacts: string;
@@ -17,11 +19,11 @@ export type Translation = {
       placeholder: {
         fullName: string;
         email: string;
-        description: string;
+        message: string;
       };
       fullName: string;
       email: string;
-      description: string;
+      message: string;
       submit: string;
       sending: string;
       success: string;
@@ -29,6 +31,7 @@ export type Translation = {
       validation: {
         fullName: string;
         email: string;
+        message: string;
       };
       consent: string;
       privacyConsentPrefix: string;
@@ -83,8 +86,14 @@ export type Translation = {
     description: string;
     backHome: string;
   };
+  contactSection: {
+    linkedin: string;
+    github: string;
+  };
   footer: {
     privacyPolicy: string;
+    allRightsReserved: string;
+    location: string;
   };
   metadata: {
     privacyPolicyDescription: string;

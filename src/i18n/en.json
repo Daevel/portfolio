@@ -4,9 +4,11 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
-    "contacts": "Contacts"
+    "contacts": "Contacts",
+    "menu": "Menu"
   },
   "home": {
+    "heroTitle": "Frontend Engineer",
     "coreTechnologies": "Core technologies",
     "seeMyWorks": "See all my works",
     "contacts": "Contacts",
@@ -15,18 +17,19 @@
       "placeholder": {
         "fullName": "Enter your full name",
         "email": "Enter your email",
-        "description": "Enter your message"
+        "message": "Enter your message"
       },
       "fullName": "Full name",
       "email": "Email",
-      "description": "Description",
+      "message": "Message",
       "submit": "Submit",
       "sending": "Sending...",
       "success": "Message sent successfully!",
       "error": "Error sending message. Please try again later.",
       "validation": {
         "fullName": "Enter a valid full name.",
-        "email": "Enter a valid email address."
+        "email": "Enter a valid email address.",
+        "message": "Please enter a message."
       },
       "consent": "Consent",
       "privacyConsentPrefix": "Yes, I agree with the ",
@@ -81,8 +84,14 @@
     "description": "The requested page does not exist or has not been published yet.",
     "backHome": "Back home"
   },
+  "contactSection": {
+    "linkedin": "LinkedIn",
+    "github": "Github"
+  },
   "footer": {
-    "privacyPolicy": "privacy policy"
+    "privacyPolicy": "privacy policy",
+    "allRightsReserved": "All rights reserved",
+    "location": "Based in Naples, Italy"
   },
   "metadata": {
     "privacyPolicyDescription": "Privacy notice for the personal portfolio of Luigi Avitabile."

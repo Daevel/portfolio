@@ -17,8 +17,8 @@ export function ContactSection({ className }: ContactSectionProps) {
     setFullName,
     email,
     setEmail,
-    description,
-    setDescription,
+    message,
+    setMessage,
     fieldErrors,
     setFieldErrors,
     copiedContact,
@@ -28,10 +28,13 @@ export function ContactSection({ className }: ContactSectionProps) {
     setAgreedToPrivacy,
     contactLinks,
     socialLinks,
-    descriptionMaxLength,
+    messageMaxLength,
     copyContact,
     sendEmail,
-  } = useContactForm();
+  } = useContactForm({
+    linkedin: t.contactSection.linkedin,
+    github: t.contactSection.github,
+  });
 
   return (
     <section className={className}>
@@ -87,7 +90,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <input
                     aria-describedby={fieldErrors.fullName ? "full-name-error" : undefined}
                     aria-invalid={fieldErrors.fullName}
-                    className="min-h-14 py-2 text-4xl font-medium leading-[1.2] bg-background outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="min-h-14 py-2 text-4xl font-medium leading-[1.4] bg-background outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="full-name"
                     name="name"
                     onChange={(event) => {
@@ -103,7 +106,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                     placeholder={t.home.contactForm.placeholder.fullName}
                   />
                   {fieldErrors.fullName && (
-                    <p className="text-destructive text-sm" id="full-name-error">
+                    <p className="text-destructive text-md tracking-tight" id="full-name-error">
                       {t.home.contactForm.validation.fullName.toUpperCase()}
                     </p>
                   )}
@@ -118,7 +121,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <input
                     aria-describedby={fieldErrors.email ? "email-error" : undefined}
                     aria-invalid={fieldErrors.email}
-                    className="min-h-14 py-2 bg-background text-4xl font-medium leading-[1.2] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="min-h-14 py-2 bg-background text-4xl font-medium leading-[1.4] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="email"
                     name="email"
                     onChange={(event) => {
@@ -134,7 +137,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                     placeholder={t.home.contactForm.placeholder.email}
                   />
                   {fieldErrors.email && (
-                    <p className="text-destructive text-sm" id="email-error">
+                    <p className="text-destructive text-md tracking-tight" id="email-error">
                       {t.home.contactForm.validation.email.toUpperCase()}
                     </p>
                   )}
@@ -142,22 +145,35 @@ export function ContactSection({ className }: ContactSectionProps) {
                 <div className="grid gap-2">
                   <label
                     className="font-medium tracking-tighter text-lg text-primary"
-                    htmlFor="description"
+                    htmlFor="message"
                   >
-                    {t.home.contactForm.description.toUpperCase()}
+                    {t.home.contactForm.message.toUpperCase()}
                   </label>
                   <textarea
-                    className="max-h-80 min-h-40 resize-y overflow-y-auto overscroll-contain py-3 bg-background text-4xl font-medium leading-[1.2] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
-                    id="description"
-                    maxLength={descriptionMaxLength}
-                    name="description"
-                    onChange={(event) => setDescription(event.target.value)}
+                    aria-describedby={fieldErrors.message ? "message-error" : undefined}
+                    aria-invalid={fieldErrors.message}
+                    className="max-h-80 min-h-40 resize-y overflow-y-auto overscroll-contain py-3 bg-background text-4xl font-medium leading-[1.4] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    id="message"
+                    maxLength={messageMaxLength}
+                    name="message"
+                    onChange={(event) => {
+                      setMessage(event.target.value);
+                      setFieldErrors((currentErrors) => ({
+                        ...currentErrors,
+                        message: false,
+                      }));
+                    }}
                     required
-                    value={description}
-                    placeholder={t.home.contactForm.placeholder.description}
+                    value={message}
+                    placeholder={t.home.contactForm.placeholder.message}
                   />
+                  {fieldErrors.message && (
+                    <p className="text-destructive text-md tracking-tight" id="message-error">
+                      {t.home.contactForm.validation.message.toUpperCase()}
+                    </p>
+                  )}
                   <p className="text-right text-muted-foreground text-sm">
-                    {description.length}/{descriptionMaxLength}
+                    {message.length}/{messageMaxLength}
                   </p>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -201,7 +217,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <p className="text-primary text-sm">{t.home.contactForm.success.toUpperCase()}</p>
                 )}
                 {formStatus === "error" && (
-                  <p className="text-destructive text-sm">
+                  <p className="text-destructive text-md tracking-tight">
                     {t.home.contactForm.error.toUpperCase()}
                   </p>
                 )}

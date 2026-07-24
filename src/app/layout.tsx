@@ -4,6 +4,7 @@ import { Antonio } from "next/font/google";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SkipToContent } from "@/components/layout/skip-to-content";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider";
 import { siteConfig } from "@/config/site";
 import { TranslationProvider } from "@/i18n/context";
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html className={antonio.variable} lang="en">
       <body className="flex min-h-screen flex-col antialiased">
         <SmoothScrollProvider />
+        <ScrollToTop />
         <TranslationProvider>
           <SkipToContent />
           <Header />

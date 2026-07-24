@@ -4,9 +4,11 @@
     "home": "Home",
     "about": "Chi sono",
     "projects": "Progetti",
-    "contacts": "Contatti"
+    "contacts": "Contatti",
+    "menu": "Menu"
   },
   "home": {
+    "heroTitle": "Frontend Engineer",
     "coreTechnologies": "Tecnologie principali",
     "seeMyWorks": "Vedi tutti i miei lavori",
     "contacts": "Contatti",
@@ -15,18 +17,19 @@
       "placeholder": {
         "fullName": "Nome completo",
         "email": "Email",
-        "description": "Descrizione"
+        "message": "Messaggio"
       },
       "fullName": "Nome completo",
       "email": "Email",
-      "description": "Descrizione",
+      "message": "Messaggio",
       "submit": "Invia messaggio",
       "sending": "Invio in corso...",
       "success": "Messaggio inviato con successo!",
       "error": "Errore nell'invio. Riprova più tardi.",
       "validation": {
         "fullName": "Inserisci un nome completo valido.",
-        "email": "Inserisci un indirizzo email valido."
+        "email": "Inserisci un indirizzo email valido.",
+        "message": "Inserisci un messaggio."
       },
       "consent": "Consenso",
       "privacyConsentPrefix": "Sì, sono d'accordo con la ",
@@ -81,8 +84,14 @@
     "description": "La pagina richiesta non esiste o non e ancora stata pubblicata.",
     "backHome": "Torna alla home"
   },
+  "contactSection": {
+    "linkedin": "LinkedIn",
+    "github": "Github"
+  },
   "footer": {
-    "privacyPolicy": "Privacy Policy"
+    "privacyPolicy": "Privacy Policy",
+    "allRightsReserved": "Tutti i diritti riservati",
+    "location": "Basato a Napoli, Italia"
   },
   "metadata": {
     "privacyPolicyDescription": "Informativa privacy del portfolio personale di Luigi Avitabile."
