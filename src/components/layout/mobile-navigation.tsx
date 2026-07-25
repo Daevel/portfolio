@@ -20,7 +20,9 @@ export function MobileNavigation() {
       <Button
         aria-controls={menuId}
         aria-expanded={isOpen}
-        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-label={
+          isOpen ? t.accessibility.closeNavigationMenu : t.accessibility.openNavigationMenu
+        }
         onClick={() => setIsOpen((current) => !current)}
         size="sm"
         type="button"
@@ -41,7 +43,7 @@ export function MobileNavigation() {
             )}
           />
         </span>
-        {t.navigation.menu}
+        {t.navigation.menu.toUpperCase()}
       </Button>
       <div
         className={cn(
@@ -50,7 +52,7 @@ export function MobileNavigation() {
         )}
         id={menuId}
       >
-        <nav aria-label="Mobile navigation" className="grid gap-1">
+        <nav aria-label={t.accessibility.mobileNavigation} className="grid gap-1">
           {siteConfig.navigation.map((item) => {
             const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 

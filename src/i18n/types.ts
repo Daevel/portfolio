@@ -9,8 +9,23 @@ export type Translation = {
     contacts: string;
     menu: string;
   };
+  accessibility: {
+    primaryNavigation: string;
+    mobileNavigation: string;
+    openNavigationMenu: string;
+    closeNavigationMenu: string;
+    logoAltSuffix: string;
+    screenshotAlt: string;
+  };
   home: {
     heroTitle: string;
+    heroAlias: string;
+    heroSide: {
+      leftTitle: string;
+      leftDescription: string;
+      rightTitle: string;
+      focusItems: string[];
+    };
     coreTechnologies: string;
     seeMyWorks: string;
     contacts: string;
@@ -54,14 +69,29 @@ export type Translation = {
     h1Title: string;
     introduction: string;
   };
+  contacts: {
+    h1Title: string;
+    introduction: string;
+  };
   projectDetail: {
     projectNotFound: string;
     visitWebsite: string;
     otherProjects: string;
     seeAllProjects: string;
+    videoPresentations: string;
+    videoPresentationLabel: string;
+    videoCaptionsLabel: string;
+    gallery: string;
+    projects: {
+      followoo: {
+        description: string;
+      };
+      culturando: {
+        description: string;
+      };
+    };
   };
   privacyPolicy: {
-    sectionLabel: string;
     h1Title: string;
     introduction: string;
     dataControllerTitle: string;
@@ -89,6 +119,7 @@ export type Translation = {
   contactSection: {
     linkedin: string;
     github: string;
+    instagram: string;
   };
   footer: {
     privacyPolicy: string;

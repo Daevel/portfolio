@@ -26,10 +26,10 @@ export function AnimatedTitle({ index, children, className }: AnimatedTitleProps
         {index}. {children}
       </motion.h1>
       <motion.svg
-        className="absolute right-0 bottom-0 left-0 h-1 w-full"
+        className="absolute right-0 bottom-0 left-0 h-1.5 w-full"
         initial={{ scaleX: 0, originX: 0 }}
         animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-        transition={{ duration: 1.2, ease: "easeInOut", delay: 0.3 }}
+        transition={{ duration: 1.2, ease: "easeInOut", delay: 0.45 }}
       >
         <rect className="fill-primary" height="100%" width="100%" />
       </motion.svg>

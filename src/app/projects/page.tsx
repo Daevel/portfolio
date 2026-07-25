@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const { t } = useTranslation();
 
   return (
-    <Container className="mt-20 py-16 sm:py-24 max-w-none">
+    <Container className="mt-20 py-16 sm:py-24 max-w-none" data-header-theme="light">
       <section>
         <Reveal>
           <h1 className="mt-4 text-8xl font-bold tracking-tighter">

@@ -1,7 +1,7 @@
 "use client";
 
 import { Container } from "@/components/layout/container";
-import { Reveal, RevealChild } from "@/components/motion/reveal";
+import { Reveal } from "@/components/motion/reveal";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "@/i18n/context";
 
@@ -36,38 +36,39 @@ export function PrivacyPolicyContent() {
   ];
 
   return (
-    <Container className="py-16 sm:py-24">
-      <section className="max-w-4xl">
+    <Container className="py-16 sm:py-24 max-w-none" data-header-theme="light">
+      <section>
         <Reveal>
-          <p className="font-medium text-muted-foreground text-sm uppercase tracking-[0.24em]">
-            {t.privacyPolicy.sectionLabel.toUpperCase()}
-          </p>
-          <h1 className="mt-4 text-5xl font-semibold tracking-tight sm:text-6xl">
+          <h1 className="mt-4 text-6xl font-bold tracking-tighter sm:text-8xl">
             {t.privacyPolicy.h1Title.toUpperCase()}
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground leading-8">
+          <p className="mt-6 text-3xl font-bold text-primary leading-8">
             {t.privacyPolicy.introduction.toUpperCase()}
           </p>
         </Reveal>
       </section>
 
-      <Reveal className="mt-12 grid gap-5 lg:grid-cols-2" staggerChildren={0.08}>
+      <Reveal className="mt-16 max-w-5xl space-y-12" staggerChildren={0.08}>
         {sections.map((section) => (
-          <RevealChild className="border border-border p-6" key={section.title} variant="fade-up">
-            <h2 className="text-xl font-semibold">{section.title.toUpperCase()}</h2>
-            <p className="mt-3 text-muted-foreground leading-7">
+          <section key={section.title}>
+            <h2 className="text-4xl font-bold tracking-tighter text-primary">
+              {section.title.toUpperCase()}
+            </h2>
+            <p className="mt-4 text-2xl text-secondary leading-tighter">
               {section.description.toUpperCase()}
             </p>
-          </RevealChild>
+          </section>
         ))}
       </Reveal>
 
-      <Reveal className="mt-10 border border-border bg-secondary p-6">
-        <h2 className="text-xl font-semibold">{t.privacyPolicy.contactTitle.toUpperCase()}</h2>
-        <p className="mt-3 text-muted-foreground leading-7">
+      <Reveal className="mt-16 max-w-5xl">
+        <h2 className="text-4xl font-bold tracking-tighter text-primary">
+          {t.privacyPolicy.contactTitle.toUpperCase()}
+        </h2>
+        <p className="mt-4 text-2xl text-secondary leading-tighter">
           {t.privacyPolicy.contactDescription.toUpperCase()} {siteConfig.email.toUpperCase()}
         </p>
-        <p className="mt-4 text-muted-foreground text-sm">
+        <p className="mt-8 text-secondary text-xl tracking-wide">
           {t.privacyPolicy.lastUpdated.toUpperCase()}
         </p>
       </Reveal>

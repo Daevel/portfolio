@@ -13,7 +13,7 @@ export function Navigation() {
 
   return (
     <nav
-      aria-label="Primary navigation"
+      aria-label={t.accessibility.primaryNavigation}
       className="hidden items-center gap-1 md:flex py-2 px-2 bg-white border border-secondary"
     >
       {siteConfig.navigation.map((item) => {

@@ -19,7 +19,7 @@ export function Footer() {
           </p>
 
           <p className="text-xl leading-none tracking-tighter sm:text-2xl lg:text-3xl">
-            © {new Date().getFullYear()} {t.footer.allRightsReserved}
+            © {new Date().getFullYear()} {t.footer.allRightsReserved.toUpperCase()}
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export function Footer() {
           </Link>
 
           <p className="text-xl font-medium leading-none tracking-tighter sm:text-2xl lg:text-3xl">
-            {t.footer.location}
+            {t.footer.location.toUpperCase()}
           </p>
         </div>
       </Container>

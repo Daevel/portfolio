@@ -31,7 +31,7 @@ export function ProjectsShowcase({
     : allProjects;
 
   return (
-    <section className={className}>
+    <section className={className} data-header-theme="light">
       <Container className="max-w-none">
         <SectionReveal>
           {showTitle && (
@@ -55,7 +55,7 @@ export function ProjectsShowcase({
                     title={project.name}
                   >
                     <Image
-                      alt={`${project.name} logo`}
+                      alt={`${project.name} ${t.accessibility.logoAltSuffix}`}
                       className="object-contain transition group-hover:brightness-0 group-hover:invert"
                       height={128}
                       src={project.path}

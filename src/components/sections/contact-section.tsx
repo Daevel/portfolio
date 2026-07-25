@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { Button } from "@/components/ui/button";
-import { useContactForm } from "@/hooks/use-contact-form";
+import { useContactForm } from "@/hooks/useContactForm";
 import { useTranslation } from "@/i18n/context";
 
 interface ContactSectionProps {
@@ -32,12 +32,13 @@ export function ContactSection({ className }: ContactSectionProps) {
     copyContact,
     sendEmail,
   } = useContactForm({
+    instagram: t.contactSection.instagram,
     linkedin: t.contactSection.linkedin,
     github: t.contactSection.github,
   });
 
   return (
-    <section className={className}>
+    <section className={className} data-header-theme="light">
       <Container className="max-w-none">
         <SectionReveal>
           <h2 className="font-semibold tracking-tighter sm:text-2xl">
@@ -190,17 +191,17 @@ export function ContactSection({ className }: ContactSectionProps) {
                       type="checkbox"
                     />
                     <label
-                      className="text-sm tracking-tight text-primary"
+                      className="text-md tracking-tight text-secondary"
                       htmlFor="checkbox-agreement"
                     >
-                      {t.home.contactForm.privacyConsentPrefix}
+                      {t.home.contactForm.privacyConsentPrefix.toUpperCase()}
                       <Link
                         className="underline underline-offset-2 text-secondary"
                         href="/privacy-policy"
                       >
-                        {t.footer.privacyPolicy}
+                        {t.footer.privacyPolicy.toUpperCase()}
                       </Link>
-                      {t.home.contactForm.privacyConsentSuffix}
+                      {t.home.contactForm.privacyConsentSuffix.toUpperCase()}
                     </label>
                   </div>
                 </div>

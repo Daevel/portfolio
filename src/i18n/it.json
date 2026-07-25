@@ -7,8 +7,28 @@
     "contacts": "Contatti",
     "menu": "Menu"
   },
+  "accessibility": {
+    "primaryNavigation": "Navigazione principale",
+    "mobileNavigation": "Navigazione mobile",
+    "openNavigationMenu": "Apri il menu di navigazione",
+    "closeNavigationMenu": "Chiudi il menu di navigazione",
+    "logoAltSuffix": "logo",
+    "screenshotAlt": "screenshot"
+  },
   "home": {
     "heroTitle": "Frontend Engineer",
+    "heroAlias": "Dævel",
+    "heroSide": {
+      "leftTitle": "About me",
+      "leftDescription": "Costruisco interfacce web accessibili, scalabili e visivamente curate, unendo precisione ingegneristica e attenzione all'esperienza utente.",
+      "rightTitle": "Focus",
+      "focusItems": [
+        "Architettura frontend",
+        "Design system",
+        "Motion e interazione",
+        "Performance web"
+      ]
+    },
     "coreTechnologies": "Tecnologie principali",
     "seeMyWorks": "Vedi tutti i miei lavori",
     "contacts": "Contatti",
@@ -37,29 +57,44 @@
     }
   },
   "about": {
-    "h1Title": "Hey, sono Luigi, conosciuto anche come Daevel.",
+    "h1Title": "Hey, sono Luigi, conosciuto anche come Dævel.",
     "introduction": "Sono Luigi Avitabile, Frontend Software Engineer. Costruisco interfacce moderne usando React, Angular e TypeScript, con un approccio pragmatico alla scalabilita del codice.",
     "frontendArchitecture": "Architettura frontend",
-    "frontendArchitectureDescription": "Strutture chiare, componenti riutilizzabili e confini tecnici comprensibili.",
+    "frontendArchitectureDescription": "Mi piace progettare frontend che restano leggibili anche quando il prodotto cresce: componenti chiari, responsabilita nette e scelte tecniche facili da spiegare.",
     "userExperience": "Esperienza utente",
-    "userExperienceDescription": "Interfacce responsive, accessibili e coerenti con gli obiettivi del prodotto.",
+    "userExperienceDescription": "Non mi fermo alla UI che funziona: cerco ritmo, gerarchia e micro-dettagli che rendono naturale usare un'interfaccia su ogni schermo.",
     "engineeringQuality": "Qualita ingegneristica",
-    "engineeringQualityDescription": "Type safety, linting, performance e attenzione alla manutenzione nel tempo.",
-    "approachTitle": "L'approccio giusto per costruire applicazioni web"
+    "engineeringQualityDescription": "Scrivo codice pensando a chi dovra modificarlo dopo di me: type safety, performance e manutenzione non sono extra, sono parte del lavoro.",
+    "approachTitle": "Come costruisco frontend che non si limitano a stare in piedi"
   },
   "projects": {
     "sectionLabel": "Progetti",
     "h1Title": "Prodotti, esperimenti e strumenti frontend costruiti per risolvere problemi reali.",
     "introduction": "Una selezione di progetti guidati da obiettivi concreti: dall'idea iniziale alle scelte tecniche, fino all'esperienza finale."
   },
+  "contacts": {
+    "h1Title": "Parliamo di interfacce, prodotti e idee da trasformare in esperienza.",
+    "introduction": "Se hai un progetto frontend, una collaborazione o vuoi semplicemente confrontarti, puoi scrivermi da qui."
+  },
   "projectDetail": {
     "projectNotFound": "Progetto non trovato",
     "visitWebsite": "Visita il sito",
     "otherProjects": "Altri progetti",
-    "seeAllProjects": "Vedi tutti i progetti"
+    "seeAllProjects": "Vedi tutti i progetti",
+    "videoPresentations": "Presentazioni video",
+    "videoPresentationLabel": "presentazione video",
+    "videoCaptionsLabel": "Inglese",
+    "gallery": "Gallery",
+    "projects": {
+      "followoo": {
+        "description": "Followoo e uno strumento privacy-first che permette di analizzare le relazioni Instagram direttamente nel browser usando il file ZIP fornito dall'esportazione dati ufficiale di Instagram."
+      },
+      "culturando": {
+        "description": "Culturando e una web app geolocalizzata per condividere e scoprire patrimoni librari privati. Permette agli utenti di pubblicare libri, cercare volumi vicini su mappa 3D, richiedere consultazioni o prestiti e usare funzioni AI per catalogare libri da copertina, tutelando privacy e posizione."
+      }
+    }
   },
   "privacyPolicy": {
-    "sectionLabel": "Privacy Policy",
     "h1Title": "Informativa privacy del sito portfolio.",
     "introduction": "Questa pagina descrive in modo trasparente quali dati possono essere trattati durante la navigazione del portfolio personale di Luigi Avitabile.",
     "dataControllerTitle": "Titolare del trattamento",
@@ -86,7 +121,8 @@
   },
   "contactSection": {
     "linkedin": "LinkedIn",
-    "github": "Github"
+    "github": "Github",
+    "instagram": "Instagram"
   },
   "footer": {
     "privacyPolicy": "Privacy Policy",

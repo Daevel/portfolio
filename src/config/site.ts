@@ -8,12 +8,13 @@ export const siteConfig = {
   email: "luigi.avitabile5@gmail.com",
   links: {
     github: "https://github.com/daevel",
+    instagram: "https://www.instagram.com/elle.evel/",
     linkedin: "https://www.linkedin.com/in/luigi-avitabile/",
   },
   navigation: [
     { key: "home" as const, href: "/" },
-    { key: "about" as const, href: "/about" },
     { key: "projects" as const, href: "/projects" },
+    { key: "about" as const, href: "/about" },
     { key: "contacts" as const, href: "/contacts" },
   ],
   technologies: [

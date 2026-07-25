@@ -7,8 +7,28 @@
     "contacts": "Contacts",
     "menu": "Menu"
   },
+  "accessibility": {
+    "primaryNavigation": "Primary navigation",
+    "mobileNavigation": "Mobile navigation",
+    "openNavigationMenu": "Open navigation menu",
+    "closeNavigationMenu": "Close navigation menu",
+    "logoAltSuffix": "logo",
+    "screenshotAlt": "screenshot"
+  },
   "home": {
     "heroTitle": "Frontend Engineer",
+    "heroAlias": "Dævel",
+    "heroSide": {
+      "leftTitle": "About me",
+      "leftDescription": "I build accessible, scalable and visually refined web interfaces, combining engineering precision with a strong attention to user experience.",
+      "rightTitle": "Focus",
+      "focusItems": [
+        "Frontend architecture",
+        "Design systems",
+        "Motion and interaction",
+        "Web performance"
+      ]
+    },
     "coreTechnologies": "Core technologies",
     "seeMyWorks": "See all my works",
     "contacts": "Contacts",
@@ -37,29 +57,44 @@
     }
   },
   "about": {
-    "h1Title": "Hello there! My name is Luigi, also known as Daevel.",
+    "h1Title": "Hello there! My name is Luigi, also known as Dævel.",
     "introduction": "I'm a Frontend Software Engineer. I build modern interfaces using React, Angular, and TypeScript, with a pragmatic approach to code scalability.",
     "frontendArchitecture": "Frontend architecture",
-    "frontendArchitectureDescription": "Clear structures, reusable components, and understandable technical boundaries.",
+    "frontendArchitectureDescription": "I like designing frontends that stay readable as the product grows: clear components, sharp responsibilities, and technical choices that are easy to explain.",
     "userExperience": "User experience",
-    "userExperienceDescription": "Responsive, accessible interfaces aligned with product goals.",
+    "userExperienceDescription": "I do not stop at a UI that works: I look for rhythm, hierarchy, and small details that make an interface feel natural on every screen.",
     "engineeringQuality": "Engineering quality",
-    "engineeringQualityDescription": "Type safety, linting, performance, and attention to long-term maintainability.",
-    "approachTitle": "The right approach to building web applications"
+    "engineeringQualityDescription": "I write code with the next person in mind: type safety, performance, and maintainability are not extras, they are part of the job.",
+    "approachTitle": "How I build frontends that do more than just hold together"
   },
   "projects": {
     "sectionLabel": "Projects",
     "h1Title": "Products, experiments, and frontend tools built to solve real problems.",
     "introduction": "A selection of project-driven work shaped by concrete goals: from the initial idea to technical decisions and the final experience."
   },
+  "contacts": {
+    "h1Title": "Let's talk about interfaces, products, and ideas worth turning into experiences.",
+    "introduction": "If you have a frontend project, a collaboration, or just want to start a conversation, you can reach me here."
+  },
   "projectDetail": {
     "projectNotFound": "Project not found",
     "visitWebsite": "Visit the website",
     "otherProjects": "Other projects",
-    "seeAllProjects": "See all projects"
+    "seeAllProjects": "See all projects",
+    "videoPresentations": "Video presentations",
+    "videoPresentationLabel": "video presentation",
+    "videoCaptionsLabel": "English",
+    "gallery": "Gallery",
+    "projects": {
+      "followoo": {
+        "description": "Followoo is a privacy-first tool that allows you to analyze your Instagram relationships directly in the browser using the ZIP file provided by Instagram's official data export."
+      },
+      "culturando": {
+        "description": "Culturando is a geolocated web app for sharing and discovering private book collections. It lets users publish books, search nearby volumes on a 3D map, request consultations or loans, and use AI features to catalog books from their covers while protecting privacy and location."
+      }
+    }
   },
   "privacyPolicy": {
-    "sectionLabel": "Privacy Policy",
     "h1Title": "Privacy notice for this portfolio website.",
     "introduction": "This page transparently describes which data may be processed while browsing Luigi Avitabile's personal portfolio.",
     "dataControllerTitle": "Data controller",
@@ -86,7 +121,8 @@
   },
   "contactSection": {
     "linkedin": "LinkedIn",
-    "github": "Github"
+    "github": "Github",
+    "instagram": "Instagram"
   },
   "footer": {
     "privacyPolicy": "privacy policy",
