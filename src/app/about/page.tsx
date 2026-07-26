@@ -21,7 +21,7 @@ export default function AboutPage() {
   return (
     <>
       <section
-        className="relative flex min-h-screen items-end overflow-hidden border-border border-b"
+        className="relative flex min-h-svh items-end overflow-hidden border-border border-b"
         data-header-theme="dark"
       >
         <div className="absolute inset-0 grid grid-rows-2 md:grid-cols-2 md:grid-rows-1">
@@ -62,66 +62,70 @@ export default function AboutPage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.18, ease: "easeOut" }}
         />
-        <Container className="relative z-10 w-full pb-12">
+        <Container className="relative z-10 w-full pb-10 sm:pb-12">
           <Reveal>
-            <h1 className="mt-4 text-6xl font-medium text-white tracking-tighter sm:text-8xl">
+            <h1 className="mt-4 max-w-[12ch] text-[clamp(3.5rem,13vw,6rem)] font-medium leading-[0.9] tracking-tighter text-white lg:max-w-[16ch]">
               {t.about.h1Title.toUpperCase()}
             </h1>
-            <p className="mt-6 text-3xl font-bold text-primary tracking-wide leading-tight">
+            <p className="mt-6 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] font-bold leading-[1.05] tracking-tighter text-primary">
               {t.about.introduction.toUpperCase()}
             </p>
           </Reveal>
         </Container>
       </section>
 
-      <Container className="py-16 sm:py-24 max-w-none" data-header-theme="light">
-        <h2 className="font-semibold tracking-tighter sm:text-4xl">
+      <Container className="max-w-none py-12 sm:py-16 lg:py-24" data-header-theme="light">
+        <h2 className="max-w-5xl text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
           {t.about.approachTitle.toUpperCase()}
         </h2>
-        <div className="mt-12 flex flex-col">
+        <div className="mt-10 flex flex-col sm:mt-12">
           <AnimatedTitle index={1}>{t.about.frontendArchitecture.toUpperCase()}</AnimatedTitle>
-          <p className="mt-6 text-3xl text-secondary">
+          <p className="mt-5 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] leading-[1.05] tracking-tighter text-secondary sm:mt-6">
             {t.about.frontendArchitectureDescription.toUpperCase()}
           </p>
 
-          <AnimatedTitle className="mt-30" index={2}>
+          <AnimatedTitle className="mt-16 sm:mt-24 lg:mt-30" index={2}>
             {t.about.userExperience.toUpperCase()}
           </AnimatedTitle>
-          <p className="mt-6 text-3xl text-secondary">
+          <p className="mt-5 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] leading-[1.05] tracking-tighter text-secondary sm:mt-6">
             {t.about.userExperienceDescription.toUpperCase()}
           </p>
 
-          <AnimatedTitle className="mt-30" index={3}>
+          <AnimatedTitle className="mt-16 sm:mt-24 lg:mt-30" index={3}>
             {t.about.engineeringQuality.toUpperCase()}
           </AnimatedTitle>
-          <p className="mt-6 text-3xl text-secondary">
+          <p className="mt-5 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] leading-[1.05] tracking-tighter text-secondary sm:mt-6">
             {t.about.engineeringQualityDescription.toUpperCase()}
           </p>
         </div>
       </Container>
 
       {/* Core Technologies Section */}
-      <section className="py-16 sm:py-20" data-header-theme="light">
+      <section className="py-12 sm:py-16 lg:py-20" data-header-theme="light">
         <Container className="max-w-none">
           <SectionReveal>
-            <h2 className="font-semibold tracking-tighter sm:text-4xl">
+            <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
               {t.home.coreTechnologies.toUpperCase()}
             </h2>
-            <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
+            <div className="relative left-1/2 mt-6 w-[100dvw] -translate-x-1/2">
               {technologyRows.map((row, rowIndex) => (
                 <div
-                  className={rowIndex === 0 ? "grid grid-cols-4" : "grid grid-cols-5"}
+                  className={
+                    rowIndex === 0
+                      ? "grid grid-cols-2 sm:grid-cols-4"
+                      : "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
+                  }
                   key={rowIndex}
                 >
                   {row.map((technology) => (
                     <div
-                      className="group grid aspect-square w-full place-items-center border-2 border-border bg-background p-3 transition-colors hover:bg-primary"
+                      className="group grid aspect-square w-full place-items-center border-2 border-border bg-background p-4 transition-colors hover:bg-primary sm:p-6"
                       key={technology.name}
                       title={technology.name}
                     >
                       <Image
                         alt={`${technology.name} ${t.accessibility.logoAltSuffix}`}
-                        className="size-10 object-contain transition group-hover:brightness-0 group-hover:invert sm:size-20 lg:size-32"
+                        className="size-[clamp(3rem,14vw,8rem)] object-contain transition group-hover:brightness-0 group-hover:invert"
                         height={128}
                         src={technology.path}
                         width={128}
@@ -135,7 +139,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <ContactSection className="py-16 sm:py-20" />
+      <ContactSection className="py-12 sm:py-16 lg:py-20" />
     </>
   );
 }

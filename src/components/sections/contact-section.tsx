@@ -41,22 +41,22 @@ export function ContactSection({ className }: ContactSectionProps) {
     <section className={className} data-header-theme="light">
       <Container className="max-w-none">
         <SectionReveal>
-          <h2 className="font-semibold tracking-tighter sm:text-2xl">
+          <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
             {t.home.contacts.toUpperCase()}
           </h2>
 
-          <div className="flex flex-row mt-6 gap-96">
+          <div className="mt-6 grid min-w-0 gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20 xl:gap-32">
             {/* Contact links and social links */}
-            <div className="flex flex-col w-full gap-5">
+            <div className="flex min-w-0 flex-col gap-4 sm:gap-5">
               {contactLinks.map((contact) => (
                 <div className="flex flex-col" key={contact.key}>
                   {copiedContact === contact.key ? (
-                    <p className="w-fit text-left font-medium text-5xl text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring tracking-tighter">
+                    <p className="w-fit max-w-full text-left text-[clamp(1.5rem,7.2vw,3rem)] font-medium leading-[1.05] tracking-tighter whitespace-nowrap text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring">
                       {t.home.contactCopiedSuccess.toUpperCase()}!
                     </p>
                   ) : (
                     <button
-                      className="w-fit tracking-tighter text-left font-medium text-5xl text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+                      className="w-fit max-w-full text-left text-[clamp(1.5rem,7.2vw,3rem)] font-medium leading-[1.05] tracking-tighter whitespace-nowrap text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
                       onClick={() => copyContact(contact)}
                       type="button"
                     >
@@ -67,7 +67,7 @@ export function ContactSection({ className }: ContactSectionProps) {
               ))}
               {socialLinks.map((link) => (
                 <a
-                  className="w-fit tracking-tighter text-left font-medium text-5xl text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
+                  className="w-fit max-w-full text-left text-[clamp(1.5rem,7.2vw,3rem)] font-medium leading-[1.05] tracking-tighter whitespace-nowrap text-primary underline decoration-primary/40 underline-offset-8 transition-colors hover:text-secondary hover:decoration-secondary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring"
                   href={link.href}
                   key={link.key}
                   rel="noopener noreferrer"
@@ -79,11 +79,11 @@ export function ContactSection({ className }: ContactSectionProps) {
             </div>
 
             {/* Contact form */}
-            <div className="flex flex-col w-full mb-10">
+            <div className="mb-10 flex min-w-0 flex-col">
               <form ref={formRef} className="grid gap-6" noValidate onSubmit={sendEmail}>
                 <div className="grid gap-2">
                   <label
-                    className="font-medium tracking-tighter text-lg text-primary"
+                    className="font-medium text-lg tracking-tighter text-primary"
                     htmlFor="full-name"
                   >
                     {t.home.contactForm.fullName.toUpperCase()}
@@ -91,7 +91,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <input
                     aria-describedby={fieldErrors.fullName ? "full-name-error" : undefined}
                     aria-invalid={fieldErrors.fullName}
-                    className="min-h-14 py-2 text-4xl font-medium leading-[1.4] bg-background outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="min-h-14 w-full min-w-0 bg-background py-2 text-[clamp(2rem,9vw,2.25rem)] font-medium leading-[1.25] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="full-name"
                     name="name"
                     onChange={(event) => {
@@ -114,7 +114,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                 </div>
                 <div className="grid gap-2">
                   <label
-                    className="font-medium tracking-tighter text-lg text-primary"
+                    className="font-medium text-lg tracking-tighter text-primary"
                     htmlFor="email"
                   >
                     {t.home.contactForm.email.toUpperCase()}
@@ -122,7 +122,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <input
                     aria-describedby={fieldErrors.email ? "email-error" : undefined}
                     aria-invalid={fieldErrors.email}
-                    className="min-h-14 py-2 bg-background text-4xl font-medium leading-[1.4] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="min-h-14 w-full min-w-0 bg-background py-2 text-[clamp(2rem,9vw,2.25rem)] font-medium leading-[1.25] outline-none transition-colors focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="email"
                     name="email"
                     onChange={(event) => {
@@ -145,7 +145,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                 </div>
                 <div className="grid gap-2">
                   <label
-                    className="font-medium tracking-tighter text-lg text-primary"
+                    className="font-medium text-lg tracking-tighter text-primary"
                     htmlFor="message"
                   >
                     {t.home.contactForm.message.toUpperCase()}
@@ -153,7 +153,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <textarea
                     aria-describedby={fieldErrors.message ? "message-error" : undefined}
                     aria-invalid={fieldErrors.message}
-                    className="max-h-80 min-h-40 resize-y overflow-y-auto overscroll-contain py-3 bg-background text-4xl font-medium leading-[1.4] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
+                    className="max-h-80 min-h-40 w-full min-w-0 resize-y overflow-y-auto overscroll-contain bg-background py-3 text-[clamp(2rem,9vw,2.25rem)] font-medium leading-[1.25] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="message"
                     maxLength={messageMaxLength}
                     name="message"
@@ -184,7 +184,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   <div className="flex flex-row items-center gap-3">
                     <input
                       checked={agreedToPrivacy}
-                      className="size-5 accent-primary"
+                      className="size-5 shrink-0 accent-primary"
                       id="checkbox-agreement"
                       onChange={(event) => setAgreedToPrivacy(event.target.checked)}
                       required
@@ -206,7 +206,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                   </div>
                 </div>
                 <Button
-                  className="h-20 tracking-tighter w-full border-4 border-primary bg-white text-3xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-5"
+                  className="h-auto min-h-18 w-full whitespace-normal border-4 border-primary bg-white px-4 py-4 text-[clamp(2rem,8vw,3rem)] leading-none tracking-tighter text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-5 sm:min-h-20"
                   disabled={isSending || !agreedToPrivacy}
                   type="submit"
                 >

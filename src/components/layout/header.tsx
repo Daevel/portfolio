@@ -29,7 +29,7 @@ export function Header() {
         </Link>
 
         <Navigation />
-        <MobileNavigation />
+        <MobileNavigation headerTheme={headerTheme} />
       </Container>
     </header>
   );

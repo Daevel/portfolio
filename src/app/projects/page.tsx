@@ -9,18 +9,18 @@ export default function ProjectsPage() {
   const { t } = useTranslation();
 
   return (
-    <Container className="mt-20 py-16 sm:py-24 max-w-none" data-header-theme="light">
+    <Container className="mt-20 max-w-none py-12 sm:py-16 lg:py-24" data-header-theme="light">
       <section>
         <Reveal>
-          <h1 className="mt-4 text-8xl font-bold tracking-tighter">
+          <h1 className="mt-4 max-w-[13ch] text-[clamp(3.75rem,14vw,6rem)] font-bold leading-[0.9] tracking-tighter lg:max-w-[16ch]">
             {t.projects.h1Title.toUpperCase()}
           </h1>
-          <p className="mt-6 text-3xl font-bold text-primary leading-8">
+          <p className="mt-6 max-w-4xl text-[clamp(1.75rem,6vw,3rem)] font-bold leading-[1.05] tracking-tighter text-primary">
             {t.projects.introduction.toUpperCase()}
           </p>
         </Reveal>
       </section>
-      <ProjectsShowcase className="mt-12" />
+      <ProjectsShowcase className="mt-10 sm:mt-12 lg:mt-16" />
     </Container>
   );
 }

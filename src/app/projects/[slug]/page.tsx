@@ -39,7 +39,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <>
       <section
-        className="relative flex min-h-screen items-end overflow-hidden border-border border-b pt-16"
+        className="relative flex min-h-svh items-end overflow-hidden border-border border-b pt-16"
         data-header-theme="dark"
       >
         {hasVideoHero ? (
@@ -62,9 +62,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-        <Container className="relative m-0 z-10 w-full pb-12">
+        <Container className="relative z-10 m-0 w-full pb-10 sm:pb-12">
           <Reveal>
-            <h1 className="text-6xl font-medium text-white tracking-tighter sm:text-8xl">
+            <h1 className="text-[clamp(4rem,18vw,6rem)] font-medium leading-[0.9] tracking-tighter text-white">
               {project.title.toUpperCase()}
             </h1>
           </Reveal>
@@ -72,10 +72,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {/* Project Description */}
-      <section className="py-16 sm:py-24" data-header-theme="light">
+      <section className="py-12 sm:py-16 lg:py-24" data-header-theme="light">
         <Container className="max-w-none">
           <Reveal>
-            <p className="text-7xl text-secondary leading-tight tracking-tighter">
+            <p className="max-w-7xl text-[clamp(2.25rem,8vw,4.5rem)] leading-[1.02] tracking-tighter text-secondary">
               {projectContent.description.toUpperCase()}
             </p>
           </Reveal>
@@ -83,13 +83,13 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {project.videos && project.videos.length > 0 && (
-        <section className="py-16 sm:py-24" data-header-theme="light">
+        <section className="py-12 sm:py-16 lg:py-24" data-header-theme="light">
           <Container className="max-w-none">
             <SectionReveal>
-              <h2 className="font-semibold tracking-tighter sm:text-4xl">
+              <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
                 {t.projectDetail.videoPresentations.toUpperCase()}
               </h2>
-              <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
+              <div className="relative left-1/2 mt-6 w-[100dvw] -translate-x-1/2">
                 <div className="grid gap-1">
                   {project.videos.map((video, index) => (
                     <div className="aspect-video overflow-hidden bg-primary" key={video.src}>
@@ -122,14 +122,14 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
       {/* Grid Images */}
       {project.images.length > 0 && (
-        <section className="py-16 sm:py-24" data-header-theme="light">
+        <section className="py-12 sm:py-16 lg:py-24" data-header-theme="light">
           <Container className="max-w-none">
             <SectionReveal>
-              <h2 className="font-semibold tracking-tighter sm:text-4xl">
+              <h2 className="text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
                 {t.projectDetail.gallery.toUpperCase()}
               </h2>
-              <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2">
-                <div className="grid grid-cols-2 gap-1">
+              <div className="relative left-1/2 mt-6 w-[100dvw] -translate-x-1/2">
+                <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
                   {project.images.map((image, index) => (
                     <div
                       className="group relative grid aspect-video w-full place-items-center overflow-hidden border border-border"
@@ -152,10 +152,10 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       )}
 
       {/* Visit Website CTA */}
-      <section className="py-16 sm:py-24" data-header-theme="light">
+      <section className="py-12 sm:py-16 lg:py-24" data-header-theme="light">
         <Container className="max-w-none text-center">
           <Button
-            className="h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
+            className="h-auto min-h-28 w-full whitespace-normal border-4 border-primary bg-white px-4 py-6 text-center text-[clamp(2.5rem,9vw,4rem)] leading-[0.95] tracking-tighter text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10 sm:min-h-40 lg:min-h-50"
             onClick={() => window.open(project.liveUrl, "_blank", "noopener,noreferrer")}
             type="button"
           >
@@ -166,7 +166,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </section>
 
       {/* Other Works section */}
-      <section className="py-16 sm:py-24" data-header-theme="light">
+      <section className="py-12 sm:py-16 lg:py-24" data-header-theme="light">
         <ProjectsShowcase
           className="max-w-none"
           excludeSlug={slug}
@@ -176,7 +176,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         />
         <Container className="max-w-none">
           <Button
-            className="mt-10 h-50 tracking-tighter w-full border-4 border-primary bg-white text-6xl text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10"
+            className="mt-10 h-auto min-h-28 w-full whitespace-normal border-4 border-primary bg-white px-4 py-6 text-center text-[clamp(2.5rem,9vw,4rem)] leading-[0.95] tracking-tighter text-primary transition-colors hover:bg-primary hover:text-white hover:underline hover:underline-offset-10 sm:min-h-40 lg:min-h-50"
             onClick={() => router.push("/projects")}
             type="button"
           >

@@ -52,6 +52,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 body {
   min-height: 100vh;
   background: var(--background);

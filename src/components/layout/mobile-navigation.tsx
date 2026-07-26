@@ -6,10 +6,15 @@ import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
+import type { HeaderTheme } from "@/hooks/useHeaderTheme";
 import { useTranslation } from "@/i18n/context";
 import { cn } from "@/lib/utils";
 
-export function MobileNavigation() {
+interface MobileNavigationProps {
+  headerTheme: HeaderTheme;
+}
+
+export function MobileNavigation({ headerTheme }: MobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const menuId = useId();
@@ -24,26 +29,36 @@ export function MobileNavigation() {
           isOpen ? t.accessibility.closeNavigationMenu : t.accessibility.openNavigationMenu
         }
         onClick={() => setIsOpen((current) => !current)}
+        className={cn(
+          "size-11 border-2 p-0 transition-colors",
+          headerTheme === "dark"
+            ? "border-background text-background hover:bg-background/10"
+            : "border-primary text-primary hover:bg-primary/10",
+        )}
         size="sm"
         type="button"
         variant="outline"
       >
-        <span aria-hidden="true" className="grid size-4 place-items-center gap-1">
+        <span aria-hidden="true" className="relative size-5">
           <span
             className={cn(
-              "h-0.5 w-4 bg-current transition-transform",
-              isOpen && "translate-y-1 rotate-45",
+              "absolute top-1/2 left-0 h-0.75 w-5 -translate-y-[7px] bg-current transition-transform",
+              isOpen && "translate-y-0 rotate-45",
             )}
           />
-          <span className={cn("h-0.5 w-4 bg-current transition-opacity", isOpen && "opacity-0")} />
           <span
             className={cn(
-              "h-0.5 w-4 bg-current transition-transform",
-              isOpen && "-translate-y-1 -rotate-45",
+              "absolute top-1/2 left-0 h-0.75 w-5 -translate-y-1/2 bg-current transition-opacity",
+              isOpen && "opacity-0",
+            )}
+          />
+          <span
+            className={cn(
+              "absolute top-1/2 left-0 h-0.75 w-5 translate-y-[5px] bg-current transition-transform",
+              isOpen && "translate-y-0 -rotate-45",
             )}
           />
         </span>
-        {t.navigation.menu.toUpperCase()}
       </Button>
       <div
         className={cn(
@@ -60,8 +75,8 @@ export function MobileNavigation() {
               <Link
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  " px-4 py-3 text-sm font-medium text-muted-foreground hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-                  isActive && "bg-secondary text-foreground",
+                  " px-4 py-3 text-3xl font-bold text-secondary hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                  isActive && "bg-primary text-background",
                 )}
                 href={item.href}
                 key={item.href}

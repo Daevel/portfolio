@@ -10,19 +10,19 @@ export default function ContactsPage() {
 
   return (
     <>
-      <Container className="mt-20 py-16 sm:py-24 max-w-none" data-header-theme="light">
+      <Container className="mt-20 max-w-none py-12 sm:py-16 lg:py-24" data-header-theme="light">
         <section>
           <Reveal>
-            <h1 className="mt-4 text-8xl font-bold tracking-tighter">
+            <h1 className="mt-4 max-w-[13ch] text-[clamp(3.75rem,14vw,6rem)] font-bold leading-[0.9] tracking-tighter lg:max-w-[16ch]">
               {t.contacts.h1Title.toUpperCase()}
             </h1>
-            <p className="mt-6 text-3xl font-bold text-primary leading-8">
+            <p className="mt-6 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] font-bold leading-[1.05] tracking-tighter text-primary">
               {t.contacts.introduction.toUpperCase()}
             </p>
           </Reveal>
         </section>
       </Container>
-      <ContactSection className="pb-16 sm:pb-20" />
+      <ContactSection className="pb-12 sm:pb-16 lg:pb-20" />
     </>
   );
 }
