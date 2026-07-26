@@ -156,7 +156,7 @@ export function ContactSection({ className }: ContactSectionProps) {
                     className="max-h-80 min-h-40 w-full min-w-0 resize-y overflow-y-auto overscroll-contain bg-background py-3 text-[clamp(2rem,9vw,2.25rem)] font-medium leading-[1.25] outline-none transition-colors [-webkit-overflow-scrolling:touch] focus:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring"
                     id="message"
                     maxLength={messageMaxLength}
-                    name="message"
+                    name="description"
                     onChange={(event) => {
                       setMessage(event.target.value);
                       setFieldErrors((currentErrors) => ({
