@@ -127,7 +127,8 @@
   "footer": {
     "privacyPolicy": "Privacy Policy",
     "allRightsReserved": "Tutti i diritti riservati",
-    "location": "Basato a Napoli, Italia"
+    "location": "Basato a Napoli, Italia",
+    "spotifyPlaylistTitle": "Ascolta la mia playlist"
   },
   "metadata": {
     "privacyPolicyDescription": "Informativa privacy del portfolio personale di Luigi Avitabile."

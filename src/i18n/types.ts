@@ -125,6 +125,7 @@ export type Translation = {
     privacyPolicy: string;
     allRightsReserved: string;
     location: string;
+    spotifyPlaylistTitle: string;
   };
   metadata: {
     privacyPolicyDescription: string;

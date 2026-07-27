@@ -64,7 +64,7 @@ export default function AboutPage() {
         />
         <Container className="relative z-10 w-full pb-10 sm:pb-12">
           <Reveal>
-            <h1 className="mt-4 max-w-[12ch] text-[clamp(3.5rem,13vw,6rem)] font-medium leading-[0.9] tracking-tighter text-white lg:max-w-[16ch]">
+            <h1 className="mt-4 text-[clamp(3.5rem,13vw,6rem)] font-medium leading-[1.05] tracking-tighter text-white">
               {t.about.h1Title.toUpperCase()}
             </h1>
             <p className="mt-6 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] font-bold leading-[1.05] tracking-tighter text-primary">
@@ -74,6 +74,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Step list */}
       <Container className="max-w-none py-12 sm:py-16 lg:py-24" data-header-theme="light">
         <h2 className="max-w-5xl text-[clamp(1.5rem,5vw,2.25rem)] font-semibold tracking-tighter">
           {t.about.approachTitle.toUpperCase()}

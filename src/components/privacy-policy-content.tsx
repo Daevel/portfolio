@@ -38,7 +38,7 @@ export function PrivacyPolicyContent() {
   return (
     <Container className="max-w-none py-12 sm:py-16 lg:py-24" data-header-theme="light">
       <section>
-        <Reveal>
+        <Reveal className="mt-12">
           <h1 className="mt-4 max-w-[13ch] text-[clamp(3.75rem,14vw,6rem)] font-bold leading-[0.9] tracking-tighter lg:max-w-[16ch]">
             {t.privacyPolicy.h1Title.toUpperCase()}
           </h1>

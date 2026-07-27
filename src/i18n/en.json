@@ -127,7 +127,8 @@
   "footer": {
     "privacyPolicy": "privacy policy",
     "allRightsReserved": "All rights reserved",
-    "location": "Based in Naples, Italy"
+    "location": "Based in Naples, Italy",
+    "spotifyPlaylistTitle": "Listen to my playlist"
   },
   "metadata": {
     "privacyPolicyDescription": "Privacy notice for the personal portfolio of Luigi Avitabile."

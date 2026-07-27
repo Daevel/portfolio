@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useId, useState } from "react";
@@ -19,6 +20,7 @@ export function MobileNavigation({ headerTheme }: MobileNavigationProps) {
   const pathname = usePathname();
   const menuId = useId();
   const { t } = useTranslation();
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="md:hidden">
@@ -60,34 +62,40 @@ export function MobileNavigation({ headerTheme }: MobileNavigationProps) {
           />
         </span>
       </Button>
-      <div
-        className={cn(
-          "absolute inset-x-5 top-20  border border-border bg-background/95 p-3 shadow-xl shadow-foreground/10 backdrop-blur md:hidden",
-          !isOpen && "hidden",
-        )}
-        id={menuId}
-      >
-        <nav aria-label={t.accessibility.mobileNavigation} className="grid gap-1">
-          {siteConfig.navigation.map((item) => {
-            const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
+            className="absolute inset-x-5 top-20 border border-border bg-background/95 p-3 shadow-xl shadow-foreground/10 backdrop-blur md:hidden"
+            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98, y: -8 }}
+            id={menuId}
+            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, scale: 0.98, y: -8 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <nav aria-label={t.accessibility.mobileNavigation} className="grid gap-1">
+              {siteConfig.navigation.map((item) => {
+                const isActive =
+                  item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
 
-            return (
-              <Link
-                aria-current={isActive ? "page" : undefined}
-                className={cn(
-                  " px-4 py-3 text-3xl font-bold text-secondary hover:bg-primary hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
-                  isActive && "bg-primary text-background",
-                )}
-                href={item.href}
-                key={item.href}
-                onClick={() => setIsOpen(false)}
-              >
-                {t.navigation[item.key].toUpperCase()}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
+                return (
+                  <Link
+                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      " px-4 py-3 text-3xl font-bold text-secondary hover:bg-primary hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                      isActive && "bg-primary text-background",
+                    )}
+                    href={item.href}
+                    key={item.href}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t.navigation[item.key].toUpperCase()}
+                  </Link>
+                );
+              })}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
