@@ -75,7 +75,7 @@ export function MobileNavigation({ headerTheme }: MobileNavigationProps) {
               <Link
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  " px-4 py-3 text-3xl font-bold text-secondary hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
+                  " px-4 py-3 text-3xl font-bold text-secondary hover:bg-primary hover:text-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-focus-ring",
                   isActive && "bg-primary text-background",
                 )}
                 href={item.href}
