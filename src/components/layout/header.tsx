@@ -15,8 +15,8 @@ export function Header() {
   const headerTheme = useHeaderTheme(logoRef);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
-      <Container className="pointer-events-auto relative flex min-h-16 max-w-none items-start justify-between gap-4 p-5">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-40 pt-[env(safe-area-inset-top)]">
+      <Container className="pointer-events-auto relative flex min-h-16 max-w-none items-start justify-between gap-4 p-5 pr-[max(1.25rem,env(safe-area-inset-right))] pl-[max(1.25rem,env(safe-area-inset-left))]">
         <Link
           className={cn(
             "text-4xl font-bold tracking-tighter transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring",

@@ -11,8 +11,8 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-border border-t bg-primary py-8 sm:py-10">
-      <Container className="grid max-w-none gap-8 text-white md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.8fr)]">
+    <footer className="border-border border-t bg-primary pt-8 pb-[calc(2rem+env(safe-area-inset-bottom))] sm:pt-10 sm:pb-[calc(2.5rem+env(safe-area-inset-bottom))]">
+      <Container className="grid max-w-none gap-8 pr-[max(1.25rem,env(safe-area-inset-right))] pl-[max(1.25rem,env(safe-area-inset-left))] text-white sm:pr-[max(1.5rem,env(safe-area-inset-right))] sm:pl-[max(1.5rem,env(safe-area-inset-left))] lg:pr-[max(2rem,env(safe-area-inset-right))] lg:pl-[max(2rem,env(safe-area-inset-left))] md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.7fr)] md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(420px,0.8fr)]">
         {/* Left column */}
         <div className="flex min-h-0 flex-col gap-8 md:min-h-72 md:justify-between">
           <div className="flex flex-col gap-5">

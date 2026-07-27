@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Antonio } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   manifest: "/images/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+  },
   icons: {
     icon: [
       { url: "/images/favicon.ico", sizes: "any" },
@@ -52,6 +56,13 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#FF7AAC",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className={antonio.variable} lang="en">
@@ -61,7 +72,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <TranslationProvider>
           <SkipToContent />
           <Header />
-          <main className="flex-1" id="main-content">
+          <main className="flex-1 bg-background" id="main-content">
             {children}
           </main>
           <Footer />
