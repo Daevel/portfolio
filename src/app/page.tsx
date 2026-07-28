@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { Container } from "@/components/layout/container";
 import { ContactSection } from "@/components/sections/contact-section";
 import { ProjectsShowcase } from "@/components/sections/projects-showcase";
+import { JsonLdPerson } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "@/i18n/context";
@@ -18,6 +19,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLdPerson />
+
       {/* Hero Section */}
       <section className="relative h-svh overflow-hidden bg-primary" data-header-theme="dark">
         {/* Title positioning layer */}

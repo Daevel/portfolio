@@ -24,10 +24,14 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   manifest: "/images/site.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
+    title: siteConfig.name,
   },
   icons: {
     icon: [
@@ -38,8 +42,22 @@ export const metadata: Metadata = {
     apple: [{ url: "/images/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
     shortcut: ["/images/favicon.ico"],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
-    canonical: "/",
+    canonical: siteConfig.url,
+    languages: {
+      en: siteConfig.url,
+    },
   },
   openGraph: {
     title: siteConfig.title,
@@ -48,11 +66,22 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: `${siteConfig.url}/opengraph-image`,
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.name} - ${siteConfig.role}`,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [`${siteConfig.url}/twitter-image`],
+    creator: "@daevel",
   },
 };
 

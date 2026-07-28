@@ -1,11 +1,13 @@
 export const siteConfig = {
   name: "Luigi Avitabile",
+  alternateName: "Daevel",
   role: "Frontend Engineer",
   title: "Luigi Avitabile | Frontend Engineer",
   description:
     "Personal portfolio of Luigi Avitabile, Frontend Engineer specializing in React, Angular, and modern web interfaces.",
-  url: "https://example.com",
+  url: "https://daevel.me",
   email: "luigi.avitabile5@gmail.com",
+  location: "Naples, Italy",
   links: {
     github: "https://github.com/daevel",
     instagram: "https://www.instagram.com/elle.evel/",

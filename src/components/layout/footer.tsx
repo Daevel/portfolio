@@ -23,9 +23,9 @@ export function Footer() {
         {/* Left column */}
         <div className="flex min-h-0 flex-col gap-8 md:min-h-72 md:justify-between sm:gap-y-20">
           <div className="flex flex-col">
-            <h1 className="text-[clamp(4rem,13vw,7rem)] font-bold leading-none tracking-tighter">
+            <p className="text-[clamp(4rem,13vw,7rem)] font-bold leading-none tracking-tighter">
               {siteConfig.name.toUpperCase()}
-            </h1>
+            </p>
           </div>
           {/* Links */}
           <div className="flex min-w-0 flex-col gap-5">
