@@ -4,6 +4,7 @@
     "home": "Home",
     "about": "About",
     "projects": "Projects",
+    "experience": "Experience",
     "contacts": "Contacts",
     "menu": "Menu"
   },
@@ -66,6 +67,55 @@
     "engineeringQuality": "Engineering quality",
     "engineeringQualityDescription": "I write code with the next person in mind: type safety, performance, and maintainability are not extras, they are part of the job.",
     "approachTitle": "How I build frontends that do more than just hold together"
+  },
+  "cta": {
+    "downloadCv": "Download CV"
+  },
+  "experience": {
+    "h1Title": "Four years of shipping frontend and full-stack products that had to work in production.",
+    "introduction": "A timeline of the companies, roles, and problems I've worked on, from industrial automation to banking platforms and national public security systems.",
+    "present": "Present",
+    "remote": "Remote",
+    "visitCompanyWebsite": "Visit company website",
+    "roles": {
+      "gftL2": {
+        "highlights": [
+          "Hold full autonomy over frontend design and implementation decisions, later validated with the client, within an Agile/Scrum team with clearly distributed role ownership.",
+          "Standardized frontend architecture and reusable components across React, React Native, TypeScript, Nx and RTK Query, cutting new developer onboarding time from one week to two days.",
+          "Delivered 4 end-to-end card request journeys (credit, debit, prepaid, American Express) across React web and React Native mobile for a digital banking platform serving approximately 90,000 users.",
+          "Automated the integration of 20+ REST endpoints using react-query and a custom script generating TypeScript clients from YAML specifications, applying AI-assisted development (GitHub Copilot, Claude) to accelerate delivery and code reviews.",
+          "Improved application responsiveness by 10% through client-side cache optimization with React Query."
+        ]
+      },
+      "gftL1": {
+        "highlights": [
+          "Sole full-stack developer on a SaaS product for a leading Italian banking client, calculating risk perimeters across companies and subsidiaries with hierarchical data representation via D3.js, owned end-to-end from design to release.",
+          "Built 20+ Spring Boot (Java) microservices supporting SaaS and banking-side products, managing relational (PostgreSQL) and non-relational (MongoDB) databases, including a predictive risk-calculation module leveraging DWH data.",
+          "Managed production deployment and monitoring on Azure across 3 environments (dev, uat, prod), sustaining up to 2 releases per day at peak; built a Bash automation script for authentication, image upload and OpenShift deployment that cut release time from 6h to 45min, adopted team-wide.",
+          "Delivered 10+ new Angular features that modernized the application's interface, automating document compilation previously performed manually by the client.",
+          "Designed and delivered 3+ standalone Angular applications for a major Italian banking client: a branch-staff card request feature, a full rewrite of an ATM security system, and a Credit-domain real-estate application."
+        ]
+      },
+      "hiTechSystems": {
+        "highlights": [
+          "Sole client engagement within the public security sector, delivering projects for national law enforcement bodies.",
+          "Developed and migrated a role-assignment system (Angular, Node.js/Express) from Angular 12 to 16, used by approximately 260,000 law enforcement operators nationwide.",
+          "Maintained a Java-based vehicle license plate recognition system running daily nationwide control batches, handling 10,000+ transactions per day.",
+          "Architected and built from scratch, on Azure cloud, a credential verification portal for drone pilot licenses with a national civil aviation authority, supporting 40,000+ registered operators.",
+          "Architected and built from scratch, on Azure cloud, an internal credential management system, eliminating the practice of storing credentials on unprotected personal devices."
+        ]
+      },
+      "jsbSolutions": {
+        "highlights": [
+          "Designed and commissioned industrial automation systems for pharmaceutical manufacturing clients, including Pfizer and AstraZeneca."
+        ]
+      },
+      "threeEm": {
+        "highlights": [
+          "Engineered and commissioned industrial automation systems for steel manufacturing clients, including Danieli Automation and Tata Steel, prior to transitioning into software development."
+        ]
+      }
+    }
   },
   "projects": {
     "sectionLabel": "Projects",

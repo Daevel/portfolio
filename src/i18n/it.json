@@ -4,6 +4,7 @@
     "home": "Home",
     "about": "Chi sono",
     "projects": "Progetti",
+    "experience": "Esperienza",
     "contacts": "Contatti",
     "menu": "Menu"
   },
@@ -66,6 +67,55 @@
     "engineeringQuality": "Qualita ingegneristica",
     "engineeringQualityDescription": "Scrivo codice pensando a chi dovra modificarlo dopo di me: type safety, performance e manutenzione non sono extra, sono parte del lavoro.",
     "approachTitle": "Come costruisco frontend che non si limitano a stare in piedi"
+  },
+  "cta": {
+    "downloadCv": "Scarica CV"
+  },
+  "experience": {
+    "h1Title": "Quattro anni passati a portare in produzione prodotti frontend e full-stack.",
+    "introduction": "Una timeline delle aziende, dei ruoli e dei problemi su cui ho lavorato: dall'automazione industriale alle piattaforme bancarie, fino ai sistemi nazionali di pubblica sicurezza.",
+    "present": "Presente",
+    "remote": "Da remoto",
+    "visitCompanyWebsite": "Visita il sito dell'azienda",
+    "roles": {
+      "gftL2": {
+        "highlights": [
+          "Piena autonomia sulle decisioni di design e implementazione frontend, validate in un secondo momento con il cliente, in un team Agile/Scrum con ownership dei ruoli ben distribuita.",
+          "Standardizzazione dell'architettura frontend e dei componenti riutilizzabili su React, React Native, TypeScript, Nx e RTK Query, riducendo l'onboarding di un nuovo sviluppatore da una settimana a due giorni.",
+          "Realizzati 4 flussi end-to-end di richiesta carta (credito, debito, prepagata, American Express) su React web e React Native mobile per una piattaforma di digital banking con circa 90.000 utenti.",
+          "Automatizzata l'integrazione di oltre 20 endpoint REST con react-query e uno script custom che genera client TypeScript da specifiche YAML, applicando sviluppo assistito da AI (GitHub Copilot, Claude) per accelerare consegne e code review.",
+          "Migliorata la reattivita dell'applicazione del 10% tramite ottimizzazione della cache lato client con React Query."
+        ]
+      },
+      "gftL1": {
+        "highlights": [
+          "Unico sviluppatore full-stack su un prodotto SaaS per un primario cliente bancario italiano, per il calcolo dei perimetri di rischio tra aziende e controllate con rappresentazione gerarchica dei dati via D3.js, seguito interamente dal design al rilascio.",
+          "Realizzati oltre 20 microservizi Spring Boot (Java) a supporto di prodotti SaaS e bancari, gestendo database relazionali (PostgreSQL) e non relazionali (MongoDB), incluso un modulo predittivo di calcolo del rischio basato su dati DWH.",
+          "Gestiti deployment e monitoraggio in produzione su Azure su 3 ambienti (dev, uat, prod), sostenendo fino a 2 rilasci al giorno nei picchi; realizzato uno script Bash di automazione per autenticazione, upload immagini e deployment OpenShift che ha ridotto il tempo di rilascio da 6h a 45min, adottato da tutto il team.",
+          "Realizzate oltre 10 nuove funzionalita Angular che hanno modernizzato l'interfaccia dell'applicazione, automatizzando una compilazione documentale prima svolta manualmente dal cliente.",
+          "Progettate e realizzate oltre 3 applicazioni Angular standalone per un primario cliente bancario italiano: una funzionalita per la richiesta carte allo sportello, una riscrittura completa di un sistema di sicurezza ATM e un'applicazione dell'area Credit per il settore immobiliare."
+        ]
+      },
+      "hiTechSystems": {
+        "highlights": [
+          "Unico referente tecnico su un cliente del settore della pubblica sicurezza, con progetti per enti nazionali delle forze dell'ordine.",
+          "Sviluppato e migrato un sistema di assegnazione ruoli (Angular, Node.js/Express) da Angular 12 a 16, utilizzato da circa 260.000 operatori delle forze dell'ordine a livello nazionale.",
+          "Mantenuto un sistema Java di riconoscimento targhe veicoli in funzione ogni giorno a livello nazionale, con oltre 10.000 transazioni giornaliere.",
+          "Progettato e realizzato da zero, su cloud Azure, un portale di verifica credenziali per i brevetti di pilota di droni in collaborazione con un ente nazionale per l'aviazione civile, a supporto di oltre 40.000 operatori registrati.",
+          "Progettato e realizzato da zero, su cloud Azure, un sistema interno di gestione delle credenziali, eliminando la prassi di conservarle su dispositivi personali non protetti."
+        ]
+      },
+      "jsbSolutions": {
+        "highlights": [
+          "Progettazione e messa in servizio di sistemi di automazione industriale per clienti del settore farmaceutico, tra cui Pfizer e AstraZeneca."
+        ]
+      },
+      "threeEm": {
+        "highlights": [
+          "Progettazione e messa in servizio di sistemi di automazione industriale per clienti del settore siderurgico, tra cui Danieli Automation e Tata Steel, prima di passare allo sviluppo software."
+        ]
+      }
+    }
   },
   "projects": {
     "sectionLabel": "Progetti",

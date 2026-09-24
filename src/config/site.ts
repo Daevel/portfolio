@@ -8,6 +8,7 @@ export const siteConfig = {
   url: "https://daevel.me",
   email: "luigi.avitabile5@gmail.com",
   location: "Naples, Italy",
+  cvUrl: "/cv/luigi-avitabile-cv.pdf",
   links: {
     github: "https://github.com/daevel",
     instagram: "https://www.instagram.com/elle.evel/",
@@ -17,6 +18,7 @@ export const siteConfig = {
     { key: "home" as const, href: "/" },
     { key: "projects" as const, href: "/projects" },
     { key: "about" as const, href: "/about" },
+    { key: "experience" as const, href: "/experience" },
     { key: "contacts" as const, href: "/contacts" },
   ],
   technologies: [

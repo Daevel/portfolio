@@ -6,6 +6,7 @@ export type Translation = {
     home: string;
     about: string;
     projects: string;
+    experience: string;
     contacts: string;
     menu: string;
   };
@@ -63,6 +64,23 @@ export type Translation = {
     engineeringQuality: string;
     engineeringQualityDescription: string;
     approachTitle: string;
+  };
+  cta: {
+    downloadCv: string;
+  };
+  experience: {
+    h1Title: string;
+    introduction: string;
+    present: string;
+    remote: string;
+    visitCompanyWebsite: string;
+    roles: {
+      gftL2: { highlights: string[] };
+      gftL1: { highlights: string[] };
+      hiTechSystems: { highlights: string[] };
+      jsbSolutions: { highlights: string[] };
+      threeEm: { highlights: string[] };
+    };
   };
   projects: {
     sectionLabel: string;

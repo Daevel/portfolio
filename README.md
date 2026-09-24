@@ -73,4 +73,5 @@ pnpm build
 - `/about`
 - `/projects`
 - `/projects/[slug]`
+- `/experience`
 - `/contacts`

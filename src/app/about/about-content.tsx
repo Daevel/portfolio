@@ -8,6 +8,7 @@ import { AnimatedTitle } from "@/components/motion/animated-title";
 import { Reveal } from "@/components/motion/reveal";
 import { SectionReveal } from "@/components/motion/section-reveal";
 import { ContactSection } from "@/components/sections/contact-section";
+import { DownloadCvButton } from "@/components/sections/download-cv-button";
 import { siteConfig } from "@/config/site";
 import { useTranslation } from "@/i18n/context";
 import motoImage from "../../../public/images/luigi-moto.jpeg";
@@ -70,6 +71,7 @@ export function AboutContent() {
             <p className="mt-6 max-w-5xl text-[clamp(1.75rem,6vw,3rem)] font-bold leading-[1.05] tracking-tighter text-primary">
               {t.about.introduction.toUpperCase()}
             </p>
+            <DownloadCvButton className="mt-8" />
           </Reveal>
         </Container>
       </section>

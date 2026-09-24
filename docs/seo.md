@@ -30,6 +30,7 @@ This pattern is necessary because `"use client"` pages cannot export `metadata`.
 | `src/app/projects/page.tsx` | `metadata` | Static metadata for /projects |
 | `src/app/contacts/page.tsx` | `metadata` | Static metadata for /contacts |
 | `src/app/projects/[slug]/page.tsx` | `generateMetadata` | Dynamic metadata per project |
+| `src/app/experience/page.tsx` | `metadata` | Static metadata for /experience |
 | `src/app/privacy-policy/page.tsx` | `metadata` | Static metadata for privacy policy |
 
 ### SEO Files
@@ -72,6 +73,11 @@ This pattern is necessary because `"use client"` pages cannot export `metadata`.
 - Description: Project-specific with technologies
 - OG images: Project hero image
 - Canonical: `https://daevel.me/projects/{slug}`
+
+### Experience (`/experience`)
+- Title: `Experience | Luigi Avitabile`
+- Description: Career timeline with companies, roles, and technologies
+- Canonical: `https://daevel.me/experience`
 
 ### Contacts (`/contacts`)
 - Title: `Contacts | Luigi Avitabile`
